@@ -14,7 +14,7 @@ hero:
       link: /en/guide/syntax
     - theme: alt
       text: GitHub
-      link: https://github.com/your/yl
+      link: https://github.com/NormikChel/YL
 
 features:
   - icon: 🔤

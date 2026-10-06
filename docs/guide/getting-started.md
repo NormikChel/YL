@@ -15,7 +15,7 @@ php -v
 ## Установка
 
 ```bash
-git clone https://github.com/your/yl.git
+git clone https://github.com/NormikChel/YL.git
 cd yl
 ```
 

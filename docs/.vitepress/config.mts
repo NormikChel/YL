@@ -35,7 +35,7 @@ export default defineConfig({
     logo: '/logo.svg',
     siteTitle: 'YL',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your/yl' },
+      { icon: 'github', link: 'https://github.com/NormikChel/YL' },
     ],
     search: {
       provider: 'local',
@@ -60,7 +60,7 @@ export default defineConfig({
     returnToTopLabel: 'Наверх',
     outline: { label: 'На этой странице', level: [2, 3] },
     editLink: {
-      pattern: 'https://github.com/your/yl/edit/main/docs/:path',
+      pattern: 'https://github.com/NormikChel/YL/edit/main/docs/:path',
       text: 'Редактировать на GitHub',
     },
     lastUpdated: { text: 'Обновлено' },
@@ -74,7 +74,7 @@ export default defineConfig({
           { text: 'Синтаксис', link: '/guide/syntax' },
           { text: 'Stdlib', link: '/guide/stdlib' },
           { text: 'Примеры', link: '/examples/' },
-          { text: 'Playground', link: 'https://github.com/your/yl/tree/main/playground' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
         ],
         sidebar: {
           '/guide/': [{ text: 'Руководство', items: [
@@ -99,7 +99,7 @@ export default defineConfig({
           { text: 'Syntax', link: '/en/guide/syntax' },
           { text: 'Stdlib', link: '/en/guide/stdlib' },
           { text: 'Examples', link: '/en/examples/' },
-          { text: 'Playground', link: 'https://github.com/your/yl' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL' },
         ],
         sidebar: {
           '/en/guide/': [{ text: 'Guide', items: [
