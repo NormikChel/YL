@@ -1,3 +1,8 @@
+<?php
+declare(strict_types=1);
+$THEME = __DIR__ . '/docs/.vitepress/theme';
+
+$vue = <<<'VUE'
 <template>
   <a
     href="#"
@@ -83,3 +88,13 @@ const label = computed(() => translations[lang.value] || translations['en'])
   .bvi-open { padding: 0 8px; width: 36px; justify-content: center; }
 }
 </style>
+VUE;
+
+file_put_contents($THEME . '/BviButton.vue', $vue);
+echo "✓ BviButton.vue обновлён:\n";
+echo "  • Иконка глаза (SVG, как в остальных кнопках навбара)\n";
+echo "  • 13 переводов через useData().lang\n";
+echo "  • Адаптив: на узких экранах только иконка\n";
+echo "  • Плавный hover, focus-ring для доступности\n";
+echo "\nДальше:\n";
+echo "  Ctrl+C → npm run docs:dev → Ctrl+Shift+R\n";
