@@ -261,7 +261,6 @@ export default defineConfig({
     logo: '/logo.svg',
     siteTitle: 'YL',
     socialLinks: [{ icon: 'github', link: GH }],
-    search: { provider: 'local', options: { translations: T.ru.s } },
     footer: T.ru.foot,
   },
 
