@@ -247,6 +247,36 @@ export default defineConfig({
       dark: 'Appearance', menu: 'Menu', top: 'Return to top',
       edit: 'Edit this page on GitHub', updated: 'Updated',
       footer: { message: 'Built on PHP. MIT License.', copyright: '© 2026 YL Contributors' },
+    }
+
+
+    ar: mk({
+      label: 'العربية', lang: 'ar', link: '/ar/',
+      nav: [
+        { text: 'الدليل', link: '/ar/guide/getting-started' },
+        { text: 'الصياغة', link: '/ar/guide/syntax' },
+        { text: 'المكتبة', link: '/ar/guide/stdlib' },
+        { text: 'أمثلة', link: '/ar/examples/' },
+        { text: 'Playground', link: GH + '/tree/main/playground' },
+        { text: 'خريطة الموقع', link: '/ar/sitemap' },
+      ],
+      sidebar: {
+        '/ar/guide/': [{ text: 'الدليل', items: [
+          { text: 'البدء السريع', link: '/ar/guide/getting-started' },
+          { text: 'الصياغة', link: '/ar/guide/syntax' },
+          { text: 'المكتبة القياسية', link: '/ar/guide/stdlib' },
+        ]}],
+        '/ar/examples/': [{ text: 'أمثلة', items: [
+          { text: 'جميع الأمثلة', link: '/ar/examples/' },
+          { text: 'OOP', link: '/ar/examples/oop' },
+          { text: 'المولدات', link: '/ar/examples/generators' },
+          { text: 'غير متزامن', link: '/ar/examples/async' },
+        ]}],
+      },
+      outline: 'في هذه الصفحة', prev: 'السابق', next: 'التالي',
+      dark: 'المظهر', menu: 'القائمة', top: 'العودة للأعلى',
+      edit: 'تعديل هذه الصفحة على GitHub', updated: 'آخر تحديث',
+      footer: { message: 'صُنع بـ PHP. رخصة MIT.', copyright: '© 2026 مساهمو YL' },
     }),
 
     de: mk({
@@ -479,36 +509,7 @@ export default defineConfig({
       dark: 'Giao diện', menu: 'Menu', top: 'Lên đầu trang',
       edit: 'Sửa trang này trên GitHub', updated: 'Cập nhật',
       footer: { message: 'Được viết bằng PHP. Giấy phép MIT.', copyright: '© 2026 Cộng tác viên YL' },
-    }),
-
-    ar: mk({
-      label: 'العربية', lang: 'ar', link: '/ar/',
-      nav: [
-        { text: 'الدليل', link: '/ar/guide/getting-started' },
-        { text: 'الصياغة', link: '/ar/guide/syntax' },
-        { text: 'المكتبة', link: '/ar/guide/stdlib' },
-        { text: 'أمثلة', link: '/ar/examples/' },
-        { text: 'Playground', link: GH + '/tree/main/playground' },
-        { text: 'خريطة الموقع', link: '/ar/sitemap' },
-      ],
-      sidebar: {
-        '/ar/guide/': [{ text: 'الدليل', items: [
-          { text: 'البدء السريع', link: '/ar/guide/getting-started' },
-          { text: 'الصياغة', link: '/ar/guide/syntax' },
-          { text: 'المكتبة القياسية', link: '/ar/guide/stdlib' },
-        ]}],
-        '/ar/examples/': [{ text: 'أمثلة', items: [
-          { text: 'جميع الأمثلة', link: '/ar/examples/' },
-          { text: 'OOP', link: '/ar/examples/oop' },
-          { text: 'المولدات', link: '/ar/examples/generators' },
-          { text: 'غير متزامن', link: '/ar/examples/async' },
-        ]}],
-      },
-      outline: 'في هذه الصفحة', prev: 'السابق', next: 'التالي',
-      dark: 'المظهر', menu: 'القائمة', top: 'العودة للأعلى',
-      edit: 'تعديل هذه الصفحة على GitHub', updated: 'آخر تحديث',
-      footer: { message: 'صُنع بـ PHP. رخصة MIT.', copyright: '© 2026 مساهمو YL' },
-    }),
+    }),),
 
     'zh-Hans': mk({
       label: '简体中文', lang: 'zh-Hans', link: '/zh-Hans/',
