@@ -129,13 +129,6 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#0f0f17', media: '(prefers-color-scheme: dark)' }],
     ['meta', { name: 'color-scheme', content: 'dark light' }],
     ['script', { src: '/js/lenis.min.js' }],
-    // BVI (bvi.isvek.ru) — порядок: jQuery → cookie → bvi → init
-    ['link', { rel: 'stylesheet', href: '/js/bvi/css/bvi.min.css' }],
-    ['script', { src: 'https://code.jquery.com/jquery-3.7.1.min.js' }],
-    ['script', { src: '/js/bvi/js.cookie.js' }],
-    ['script', { src: '/js/bvi/js/bvi.min.js' }],
-    ['script', { src: '/js/bvi/bvi-init.js' }],
-    ['script', { src: '/js/bvi/bvi-i18n.js' }],
     ['script', { src: '/js/lenis-init.js' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],

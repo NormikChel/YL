@@ -95,29 +95,9 @@
 /* ============================================================
    BVI — кнопка "версия для слабовидящих"
    ============================================================ */
-.bvi-open-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin-right: 8px;
-  border-radius: 8px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  color: var(--vp-c-text-1);
-  transition: background-color 0.2s, transform 0.15s;
-}
 .bvi-open-btn:hover {
   background-color: var(--vp-c-bg-soft);
   transform: scale(1.05);
-}
-.bvi-open-btn:focus-visible {
-  outline: 2px solid var(--vp-c-brand-1);
-  outline-offset: 2px;
 }
 .bvi-open-btn span {
   filter: grayscale(0.2);
