@@ -1,0 +1,7 @@
+~ std/list.yl
+§ head(a) ⟦ ^ a[0] ⟧
+§ tail(a) ⟦ ¤ o = []; # i = 1 .. len(a) ⟦ o = push(o, a[i]) ⟧ ^ o ⟧
+§ take(a, n) ⟦ ¤ o = []; # i = 0 .. n ⟦ ? i < len(a) ⟦ o = push(o, a[i]) ⟧ ⟧ ^ o ⟧
+§ reverse(a) ⟦ ¤ o = []; # i = 0 .. len(a) ⟦ o = push(o, a[len(a) - i - 1]) ⟧ ^ o ⟧
+§ flatten(a) ⟦ ¤ o = []; ⇶ x = a ⟦ ⇶ y = x ⟦ o = push(o, y) ⟧ ⟧ ^ o ⟧
+§ zip(a, b) ⟦ ¤ o = []; ¤ n = min(len(a), len(b)); # i = 0 .. n ⟦ o = push(o, [a[i], b[i]]) ⟧ ^ o ⟧

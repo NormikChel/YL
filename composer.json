@@ -1,0 +1,12 @@
+{
+    "name": "yankee/yl",
+    "description": "YL - Yankee Language, esoteric programming language on PHP",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "ext-mbstring": "*",
+        "ext-json": "*"
+    },
+    "bin": ["yl.php"]
+}

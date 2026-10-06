@@ -1,0 +1,93 @@
+
+:root {
+  --vp-c-brand-1: #a78bfa;
+  --vp-c-brand-2: #8b5cf6;
+  --vp-c-brand-3: #7c3aed;
+  --vp-c-brand-soft: rgba(167, 139, 250, 0.15);
+  --vp-c-bg-alt: #f8f7fc;
+  --vp-c-bg-soft: #f3f1f8;
+  --vp-font-family-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.dark {
+  --vp-c-bg: #0f0f17;
+  --vp-c-bg-alt: #15151f;
+  --vp-c-bg-soft: #1a1a26;
+  --vp-c-bg-elv: #1f1f2e;
+  --vp-c-divider: #25253a;
+  --vp-c-gutter: #1a1a26;
+  --vp-c-brand-1: #a78bfa;
+  --vp-c-brand-2: #c4b5fd;
+  --vp-c-brand-3: #ddd6fe;
+  --vp-c-brand-soft: rgba(167, 139, 250, 0.18);
+  --vp-code-block-bg: #12121a;
+}
+
+/* Hero gradient */
+.VPHero .name {
+  font-family: var(--vp-font-family-mono);
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+.VPHero .name .clip {
+  background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.VPHero .text {
+  font-family: var(--vp-font-family-mono);
+  font-weight: 700;
+}
+.VPHero .tagline {
+  max-width: 600px;
+  color: var(--vp-c-text-2);
+}
+.VPHero .actions .VPButton.brand {
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  border: none;
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.35);
+}
+.VPHero .actions .VPButton.brand:hover {
+  box-shadow: 0 6px 28px rgba(167, 139, 250, 0.5);
+}
+
+/* Feature cards */
+.VPFeature {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg-soft);
+  transition: transform .15s ease, border-color .15s ease;
+}
+.VPFeature:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-c-brand-1);
+}
+.VPFeature .icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* Code blocks */
+.vp-doc div[class*='language-'] {
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-divider);
+}
+.vp-doc code { font-feature-settings: 'liga' 0; }
+
+/* Navbar */
+.VPNavBarTitle .title {
+  font-family: var(--vp-font-family-mono);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Search button */
+.DocSearch-Button {
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+}
+.DocSearch-Button:hover {
+  background: var(--vp-c-bg-alt);
+  border-color: var(--vp-c-brand-1);
+}

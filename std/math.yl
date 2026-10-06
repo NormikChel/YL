@@ -1,0 +1,7 @@
+~ std/math.yl
+¤ PI = 3.14159265358979
+§ степень(b, e) ⟦ ¤ r = 1; # i = 0 .. e ⟦ r = r * b ⟧ ^ r ⟧
+§ sign(x) ⟦ ? x > 0 ⟦ ^ 1 ⟧ ? x < 0 ⟦ ^ -1 ⟧ ^ 0 ⟧
+§ even(x) ⟦ ^ x % 2 == 0 ⟧
+§ odd(x) ⟦ ^ x % 2 != 0 ⟧
+§ clamp(x, lo, hi) ⟦ ^ min(max(x, lo), hi) ⟧

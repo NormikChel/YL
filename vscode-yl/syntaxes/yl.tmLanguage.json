@@ -1,0 +1,37 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "YL",
+    "scopeName": "source.yl",
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#keywords" },
+        { "include": "#numbers" },
+        { "include": "#functions" },
+        { "include": "#operators" }
+    ],
+    "repository": {
+        "comments": { "patterns": [{ "name": "comment.line.tilde.yl", "match": "~.*$" }] },
+        "strings": { "patterns": [{
+            "name": "string.quoted.double.yl",
+            "begin": "\"", "end": "\"",
+            "patterns": [{ "match": "\\\\.", "name": "constant.character.escape.yl" }]
+        }] },
+        "keywords": { "patterns": [{
+            "name": "keyword.control.yl",
+            "match": "[¤§λ»⟦⟧?¿@#^‼⁇⌦⊕⊘↻≡☑☐∅‡⋔⇢↤⇶†]"
+        }] },
+        "numbers": { "patterns": [{
+            "name": "constant.numeric.yl",
+            "match": "\\b\\d+(\\.\\d+)?\\b"
+        }] },
+        "functions": { "patterns": [
+            { "name": "entity.name.function.yl", "match": "(?<=§\\s)[\\p{L}_][\\p{L}\\p{N}_]*" },
+            { "name": "entity.name.type.yl", "match": "(?<=‡\\s)[\\p{L}_][\\p{L}\\p{N}_]*" }
+        ] },
+        "operators": { "patterns": [{
+            "name": "keyword.operator.yl",
+            "match": "==|!=|<=|>=|&&|\\|\\||\\.\\.|[+\\-*/%<>=!]"
+        }] }
+    }
+}

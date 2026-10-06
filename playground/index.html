@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>YL Playground</title>
+<style>
+    body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; margin: 0; padding: 20px; }
+    h1 { color: #ffd369; font-size: 20px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 78vh; }
+    textarea, pre {
+        background: #16213e; color: #eee; border: 1px solid #0f3460; border-radius: 6px;
+        padding: 12px; font: 14px ui-monospace, Consolas, monospace; height: 100%;
+        resize: none; overflow: auto; white-space: pre-wrap; box-sizing: border-box;
+    }
+    textarea:focus { outline: 2px solid #ffd369; }
+    button {
+        background: #ffd369; color: #1a1a2e; border: none; padding: 10px 24px;
+        font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 12px;
+    }
+    button:hover { background: #f9c74f; }
+    .ok { color: #6ee7b7; }
+    .err { color: #ef476f; }
+</style>
+</head>
+<body>
+    <h1>YL Playground — Yankee Language</h1>
+    <div class="grid">
+        <textarea id="code">~ Демо YL
+¤ имя = "Мир"
+» "Привет, " + имя + "!"
+
+§ сумма(a) ⟦
+    ¤ s = 0
+    ⇶ x = a ⟦ s = s + x ⟧
+    ^ s
+⟧
+
+» "Сумма:", сумма([1,2,3,4,5])
+
+‡ Точка ⟦
+    ⋔ init(x, y) ⟦ this.x = x; this.y = y ⟧
+    ⋔ длина() ⟦ ^ sqrt(this.x * this.x + this.y * this.y) ⟧
+⟧
+¤ p = ⇢ Точка(3, 4)
+» "Длина:", p.длина()</textarea>
+        <pre id="out">Нажми «Запустить» →</pre>
+    </div>
+    <button onclick="run()">▶ Запустить</button>
+<script>
+async function run() {
+    const code = document.getElementById('code').value;
+    const out = document.getElementById('out');
+    out.textContent = '...';
+    try {
+        const fd = new FormData();
+        fd.append('code', code);
+        const r = await fetch('server.php', { method: 'POST', body: fd });
+        const j = await r.json();
+        if (j.ok) { out.className = 'ok'; out.textContent = j.out || '(пусто)'; }
+        else { out.className = 'err'; out.textContent = (j.out || '') + (j.err || 'ошибка'); }
+    } catch (e) {
+        out.className = 'err';
+        out.textContent = 'Не удалось связаться с сервером: ' + e;
+    }
+}
+</script>
+</body>
+</html>

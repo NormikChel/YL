@@ -1,0 +1,20 @@
+~ std/json.yl — работа с JSON
+
+§ разобрать(s) ⟦ ^ json_parse(s) ⟧
+§ сериализовать(v) ⟦ ^ json_str(v) ⟧
+§ красиво(v) ⟦ ^ json_str_pretty(v) ⟧
+
+§ поле(obj, key) ⟦
+    ? type(obj) != "arr" ⟦ ^ ∅ ⟧
+    ^ obj[key]
+⟧
+
+§ поля(obj) ⟦
+    ? type(obj) != "arr" ⟦ ^ [] ⟧
+    ^ keys(obj)
+⟧
+
+§ размер(obj) ⟦
+    ? type(obj) != "arr" ⟦ ^ 0 ⟧
+    ^ len(obj)
+⟧

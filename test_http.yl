@@ -1,0 +1,6 @@
+» "Сейчас:", сейчас()
+» "ISO:", ISO(now())
+
+~ Раскомментируй если есть интернет:
+~ ¤ r = GET("https://api.github.com/zen")
+~ » "GitHub zen:", r

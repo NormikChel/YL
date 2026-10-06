@@ -1,0 +1,17 @@
+~ std/datetime.yl — дата и время
+
+§ сейчас_ts() ⟦ ^ now() ⟧
+
+§ сейчас() ⟦ ^ date_fmt(now(), "Y-m-d H:i:s") ⟧
+§ сегодня() ⟦ ^ date_fmt(now(), "Y-m-d") ⟧
+§ время_сейчас() ⟦ ^ date_fmt(now(), "H:i:s") ⟧
+
+§ формат(ts, fmt) ⟦ ^ date_fmt(ts, fmt) ⟧
+
+§ пауза(ms) ⟦
+    sleep_ms(ms)
+    ^ ∅
+⟧
+
+§ ISO(ts) ⟦ ^ date_fmt(ts, "Y-m-d\TH:i:s") ⟧
+§ timestamp() ⟦ ^ сейчас_ts() ⟧

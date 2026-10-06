@@ -1,0 +1,23 @@
+# PHP
+/vendor/
+composer.lock
+
+# Node
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+.vercel
+
+# YL
+*.bak
+*.bak2
+*.bak3
+main_compiled.php
+test_*_compiled.php
+out.txt
+yl_modules/
+ylpkg.json
+
+# OS
+.DS_Store
+Thumbs.db
