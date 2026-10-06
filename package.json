@@ -7,10 +7,11 @@
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
         "docs:preview": "vitepress preview docs",
-        "feeds": "php scripts/gen-feeds.php",
-        "postdocs:build": "php scripts/gen-feeds.php"
+        "feeds": "node scripts/gen-feeds.mjs",
+        "postdocs:build": "node scripts/gen-feeds.mjs"
     },
     "devDependencies": {
         "vitepress": "^1.5.0"
-    }
+    },
+    "type": "module"
 }
