@@ -247,8 +247,7 @@ export default defineConfig({
       dark: 'Appearance', menu: 'Menu', top: 'Return to top',
       edit: 'Edit this page on GitHub', updated: 'Updated',
       footer: { message: 'Built on PHP. MIT License.', copyright: '© 2026 YL Contributors' },
-    }
-
+    }),
 
     ar: mk({
       label: 'العربية', lang: 'ar', link: '/ar/',
@@ -509,7 +508,7 @@ export default defineConfig({
       dark: 'Giao diện', menu: 'Menu', top: 'Lên đầu trang',
       edit: 'Sửa trang này trên GitHub', updated: 'Cập nhật',
       footer: { message: 'Được viết bằng PHP. Giấy phép MIT.', copyright: '© 2026 Cộng tác viên YL' },
-    }),),
+    }),
 
     'zh-Hans': mk({
       label: '简体中文', lang: 'zh-Hans', link: '/zh-Hans/',
