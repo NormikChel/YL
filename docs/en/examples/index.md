@@ -5,34 +5,52 @@ A collection of YL examples from simple to advanced.
 ## Hello world
 
 ```yl
-~PR~ "Hello, world!"
+» "Hello, world!"
 ```
 
 ## Classes and inheritance
 
 ```yl
-~CLS~ Animal ~O~
-    ~MET~ init(name) ~O~ this.name = name ~C~
-    ~MET~ sound() ~O~ ^ "..." ~C~
-~C~
+‡ Animal ⟦
+    ⋔ init(name) ⟦ this.name = name ⟧
+    ⋔ sound() ⟦ ^ "..." ⟧
+⟧
 
-~CLS~ Dog ~INH~ Animal ~O~
-    ~MET~ sound() ~O~ ^ "Woof!" ~C~
-~C~
+‡ Dog † Animal ⟦
+    ⋔ sound() ⟦ ^ "Woof!" ⟧
+⟧
 
-~DECL~ rex = ~NEW~ Dog("Rex")
-~PR~ rex.name + " says: " + rex.sound()
+¤ rex = ⇢ Dog("Rex")
+» rex.name + " says: " + rex.sound()
 ```
 
 ## Closures and map
 
 ```yl
-~DECL~ squares = map([1, 2, 3, 4], ~LAM~ (x) ~O~ ^ x * x ~C~)
-~PR~ squares
+¤ squares = map([1, 2, 3, 4], λ (x) ⟦ ^ x * x ⟧)
+» squares
 ```
 
-Full examples:
+## Generators
 
-- [OOP](/en/examples/oop)
-- [Generators](/en/examples/generators)
-- [Async](/en/examples/async)
+```yl
+§ evens(n) ⟦
+    # i = 0 .. n ⟦
+        ? even(i) ⟦ ↤ i ⟧
+    ⟧
+⟧
+
+⇶ x = evens(10) ⟦
+    » "even:", x
+⟧
+```
+
+## Async
+
+```yl
+⚡ § slow(x) ⟦ ^ x * 2 ⟧
+¤ t = slow(21)
+» ⏸ t
+```
+
+Full examples in the [GitHub repository](https://github.com/NormikChel/YL/tree/main/examples).

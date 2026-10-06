@@ -270,12 +270,12 @@ export default defineConfig({
     root: { label: 'Русский', lang: 'ru', themeConfig: mk({
       ...T.ru,
       nav: [
-        { text: 'Руководство', link: '/guide/getting-started', activeMatch: '/guide/' },
-        { text: 'Синтаксис', link: '/guide/syntax' },
-        { text: 'Stdlib', link: '/guide/stdlib' },
-        { text: 'Примеры', link: '/examples/' },
-        { text: 'Playground', link: GH + '/tree/main/playground' },
-      ],
+          { text: 'Руководство', link: '/guide/getting-started' },
+          { text: 'Синтаксис', link: '/guide/syntax' },
+          { text: 'Stdlib', link: '/guide/stdlib' },
+          { text: 'Примеры', link: '/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: {
         '/guide/': [{ text: 'Руководство', items: [
           { text: 'Быстрый старт', link: '/guide/getting-started' },
@@ -295,10 +295,12 @@ export default defineConfig({
     ar: { label: 'العربية', lang: 'ar', dir: 'rtl', link: '/ar/', themeConfig: mk({
       ...T.ar,
       nav: [
-        { text: 'الدليل', link: '/ar/guide/getting-started' },
-        { text: 'الصياغة', link: '/ar/guide/syntax' },
-        { text: 'المكتبة', link: '/ar/guide/stdlib' },
-      ],
+          { text: 'الدليل', link: '/ar/guide/getting-started' },
+          { text: 'الصياغة', link: '/ar/guide/syntax' },
+          { text: 'المكتبة', link: '/ar/guide/stdlib' },
+          { text: 'أمثلة', link: '/ar/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/ar/guide/': [{ text: 'الدليل', items: [
         { text: 'البدء السريع', link: '/ar/guide/getting-started' },
         { text: 'الصياغة', link: '/ar/guide/syntax' },
@@ -309,10 +311,12 @@ export default defineConfig({
     de: { label: 'Deutsch', lang: 'de', link: '/de/', themeConfig: mk({
       ...T.de,
       nav: [
-        { text: 'Anleitung', link: '/de/guide/getting-started' },
-        { text: 'Syntax', link: '/de/guide/syntax' },
-        { text: 'Stdlib', link: '/de/guide/stdlib' },
-      ],
+          { text: 'Anleitung', link: '/de/guide/getting-started' },
+          { text: 'Syntax', link: '/de/guide/syntax' },
+          { text: 'Stdlib', link: '/de/guide/stdlib' },
+          { text: 'Beispiele', link: '/de/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/de/guide/': [{ text: 'Anleitung', items: [
         { text: 'Erste Schritte', link: '/de/guide/getting-started' },
         { text: 'Syntax', link: '/de/guide/syntax' },
@@ -323,10 +327,12 @@ export default defineConfig({
     en: { label: 'English', lang: 'en', link: '/en/', themeConfig: mk({
       ...T.en,
       nav: [
-        { text: 'Guide', link: '/en/guide/getting-started' },
-        { text: 'Syntax', link: '/en/guide/syntax' },
-        { text: 'Stdlib', link: '/en/guide/stdlib' },
-      ],
+          { text: 'Guide', link: '/en/guide/getting-started' },
+          { text: 'Syntax', link: '/en/guide/syntax' },
+          { text: 'Stdlib', link: '/en/guide/stdlib' },
+          { text: 'Examples', link: '/en/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/en/guide/': [{ text: 'Guide', items: [
         { text: 'Getting started', link: '/en/guide/getting-started' },
         { text: 'Syntax', link: '/en/guide/syntax' },
@@ -337,10 +343,12 @@ export default defineConfig({
     fr: { label: 'Français', lang: 'fr', link: '/fr/', themeConfig: mk({
       ...T.fr,
       nav: [
-        { text: 'Guide', link: '/fr/guide/getting-started' },
-        { text: 'Syntaxe', link: '/fr/guide/syntax' },
-        { text: 'Stdlib', link: '/fr/guide/stdlib' },
-      ],
+          { text: 'Guide', link: '/fr/guide/getting-started' },
+          { text: 'Syntaxe', link: '/fr/guide/syntax' },
+          { text: 'Stdlib', link: '/fr/guide/stdlib' },
+          { text: 'Exemples', link: '/fr/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/fr/guide/': [{ text: 'Guide', items: [
         { text: 'Démarrage rapide', link: '/fr/guide/getting-started' },
         { text: 'Syntaxe', link: '/fr/guide/syntax' },
@@ -351,10 +359,12 @@ export default defineConfig({
     hi: { label: 'हिन्दी', lang: 'hi', link: '/hi/', themeConfig: mk({
       ...T.hi,
       nav: [
-        { text: 'गाइड', link: '/hi/guide/getting-started' },
-        { text: 'सिंटैक्स', link: '/hi/guide/syntax' },
-        { text: 'मानक लाइब्रेरी', link: '/hi/guide/stdlib' },
-      ],
+          { text: 'गाइड', link: '/hi/guide/getting-started' },
+          { text: 'सिंटैक्स', link: '/hi/guide/syntax' },
+          { text: 'मानक लाइब्रेरी', link: '/hi/guide/stdlib' },
+          { text: 'उदाहरण', link: '/hi/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/hi/guide/': [{ text: 'गाइड', items: [
         { text: 'शुरुआत', link: '/hi/guide/getting-started' },
         { text: 'सिंटैक्स', link: '/hi/guide/syntax' },
@@ -365,10 +375,12 @@ export default defineConfig({
     id: { label: 'Bahasa Indonesia', lang: 'id', link: '/id/', themeConfig: mk({
       ...T.id,
       nav: [
-        { text: 'Panduan', link: '/id/guide/getting-started' },
-        { text: 'Sintaks', link: '/id/guide/syntax' },
-        { text: 'Stdlib', link: '/id/guide/stdlib' },
-      ],
+          { text: 'Panduan', link: '/id/guide/getting-started' },
+          { text: 'Sintaks', link: '/id/guide/syntax' },
+          { text: 'Stdlib', link: '/id/guide/stdlib' },
+          { text: 'Contoh', link: '/id/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/id/guide/': [{ text: 'Panduan', items: [
         { text: 'Mulai cepat', link: '/id/guide/getting-started' },
         { text: 'Sintaks', link: '/id/guide/syntax' },
@@ -379,10 +391,12 @@ export default defineConfig({
     ja: { label: '日本語', lang: 'ja', link: '/ja/', themeConfig: mk({
       ...T.ja,
       nav: [
-        { text: 'ガイド', link: '/ja/guide/getting-started' },
-        { text: '構文', link: '/ja/guide/syntax' },
-        { text: '標準ライブラリ', link: '/ja/guide/stdlib' },
-      ],
+          { text: 'ガイド', link: '/ja/guide/getting-started' },
+          { text: '構文', link: '/ja/guide/syntax' },
+          { text: '標準ライブラリ', link: '/ja/guide/stdlib' },
+          { text: 'サンプル', link: '/ja/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/ja/guide/': [{ text: 'ガイド', items: [
         { text: 'はじめに', link: '/ja/guide/getting-started' },
         { text: '構文', link: '/ja/guide/syntax' },
@@ -393,10 +407,12 @@ export default defineConfig({
     ko: { label: '한국어', lang: 'ko', link: '/ko/', themeConfig: mk({
       ...T.ko,
       nav: [
-        { text: '가이드', link: '/ko/guide/getting-started' },
-        { text: '구문', link: '/ko/guide/syntax' },
-        { text: '표준 라이브러리', link: '/ko/guide/stdlib' },
-      ],
+          { text: '가이드', link: '/ko/guide/getting-started' },
+          { text: '구문', link: '/ko/guide/syntax' },
+          { text: '표준 라이브러리', link: '/ko/guide/stdlib' },
+          { text: '예제', link: '/ko/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/ko/guide/': [{ text: '가이드', items: [
         { text: '시작하기', link: '/ko/guide/getting-started' },
         { text: '구문', link: '/ko/guide/syntax' },
@@ -407,10 +423,12 @@ export default defineConfig({
     tr: { label: 'Türkçe', lang: 'tr', link: '/tr/', themeConfig: mk({
       ...T.tr,
       nav: [
-        { text: 'Kılavuz', link: '/tr/guide/getting-started' },
-        { text: 'Sözdizimi', link: '/tr/guide/syntax' },
-        { text: 'Stdlib', link: '/tr/guide/stdlib' },
-      ],
+          { text: 'Kılavuz', link: '/tr/guide/getting-started' },
+          { text: 'Sözdizimi', link: '/tr/guide/syntax' },
+          { text: 'Stdlib', link: '/tr/guide/stdlib' },
+          { text: 'Örnekler', link: '/tr/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/tr/guide/': [{ text: 'Kılavuz', items: [
         { text: 'Hızlı başlangıç', link: '/tr/guide/getting-started' },
         { text: 'Sözdizimi', link: '/tr/guide/syntax' },
@@ -421,10 +439,12 @@ export default defineConfig({
     vi: { label: 'Tiếng Việt', lang: 'vi', link: '/vi/', themeConfig: mk({
       ...T.vi,
       nav: [
-        { text: 'Hướng dẫn', link: '/vi/guide/getting-started' },
-        { text: 'Cú pháp', link: '/vi/guide/syntax' },
-        { text: 'Stdlib', link: '/vi/guide/stdlib' },
-      ],
+          { text: 'Hướng dẫn', link: '/vi/guide/getting-started' },
+          { text: 'Cú pháp', link: '/vi/guide/syntax' },
+          { text: 'Stdlib', link: '/vi/guide/stdlib' },
+          { text: 'Ví dụ', link: '/vi/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/vi/guide/': [{ text: 'Hướng dẫn', items: [
         { text: 'Bắt đầu', link: '/vi/guide/getting-started' },
         { text: 'Cú pháp', link: '/vi/guide/syntax' },
@@ -435,10 +455,12 @@ export default defineConfig({
     'zh-Hans': { label: '简体中文', lang: 'zh-Hans', link: '/zh-Hans/', themeConfig: mk({
       ...T.zhHans,
       nav: [
-        { text: '指南', link: '/zh-Hans/guide/getting-started' },
-        { text: '语法', link: '/zh-Hans/guide/syntax' },
-        { text: '标准库', link: '/zh-Hans/guide/stdlib' },
-      ],
+          { text: '指南', link: '/zh-Hans/guide/getting-started' },
+          { text: '语法', link: '/zh-Hans/guide/syntax' },
+          { text: '标准库', link: '/zh-Hans/guide/stdlib' },
+          { text: '示例', link: '/zh-Hans/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/zh-Hans/guide/': [{ text: '指南', items: [
         { text: '快速开始', link: '/zh-Hans/guide/getting-started' },
         { text: '语法', link: '/zh-Hans/guide/syntax' },
@@ -449,10 +471,12 @@ export default defineConfig({
     'zh-Hant': { label: '繁體中文（臺式）', lang: 'zh-Hant', link: '/zh-Hant/', themeConfig: mk({
       ...T.zhHant,
       nav: [
-        { text: '指南 der', link: '/zh-Hant/guide/getting-started' },
-        { text: '語法', link: '/zh-Hant/guide/syntax' },
-        { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
-      ],
+          { text: '指南 der', link: '/zh-Hant/guide/getting-started' },
+          { text: '語法', link: '/zh-Hant/guide/syntax' },
+          { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
+          { text: '範例', link: '/zh-Hant/examples/' },
+          { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ],
       sidebar: { '/zh-Hant/guide/': [{ text: '指南', items: [
         { text: '立馬開始', link: '/zh-Hant/guide/getting-started' },
         { text: '語法 der', link: '/zh-Hant/guide/syntax' },

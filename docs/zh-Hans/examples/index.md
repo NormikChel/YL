@@ -1,38 +1,56 @@
 # 示例
 
-从简单到复杂的 YL 示例。
+YL 从简单到复杂的示例合集。
 
 ## Hello world
 
 ```yl
-~PR~ "你好，世界！"
+» "你好，世界！"
 ```
 
 ## 类与继承
 
 ```yl
-~CLS~ 动物 ~O~
-    ~MET~ init(名字) ~O~ this.名字 = 名字 ~C~
-    ~MET~ 叫声() ~O~ ^ "..." ~C~
-~C~
+‡ 动物 ⟦
+    ⋔ init(名字) ⟦ this.名字 = 名字 ⟧
+    ⋔ 叫声() ⟦ ^ "..." ⟧
+⟧
 
-~CLS~ 狗 ~INH~ 动物 ~O~
-    ~MET~ 叫声() ~O~ ^ "汪！" ~C~
-~C~
+‡ 狗 † 动物 ⟦
+    ⋔ 叫声() ⟦ ^ "汪！" ⟧
+⟧
 
-~DECL~ 小七 = ~NEW~ 狗("小七")
-~PR~ 小七.名字 + " 说：" + 小七.叫声()
+¤ 小七 = ⇢ 狗("小七")
+» 小七.名字 + " 说：" + 小七.叫声()
 ```
 
 ## 闭包与 map
 
 ```yl
-~DECL~ 平方 = map([1, 2, 3, 4], ~LAM~ (x) ~O~ ^ x * x ~C~)
-~PR~ 平方
+¤ 平方 = map([1, 2, 3, 4], λ (x) ⟦ ^ x * x ⟧)
+» 平方
 ```
 
-更多示例：
+## 生成器
 
-- [面向对象](/zh-Hans/examples/oop)
-- [生成器](/zh-Hans/examples/generators)
-- [异步](/zh-Hans/examples/async)
+```yl
+§ 偶数(n) ⟦
+    # i = 0 .. n ⟦
+        ? even(i) ⟦ ↤ i ⟧
+    ⟧
+⟧
+
+⇶ x = 偶数(10) ⟦
+    » "偶数：", x
+⟧
+```
+
+## 异步
+
+```yl
+⚡ § 慢(x) ⟦ ^ x * 2 ⟧
+¤ t = 慢(21)
+» ⏸ t
+```
+
+完整示例见 [GitHub 仓库](https://github.com/NormikChel/YL/tree/main/examples)。
