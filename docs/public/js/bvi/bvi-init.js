@@ -1,77 +1,51 @@
-// YL BVI — button for visually impaired users
-// Вставляет кнопку 👁 в навбар VitePress и инициализирует BVI
+// YL BVI — кнопка для слабовидящих.
+// Библиотека BVI сама навешивает обработчик на .bvi-open.
+// Мы только вставляем кнопку в навбар VitePress.
+
 (function () {
   'use strict';
 
-  var MAX_ATTEMPTS = 50;
-  var attempts = 0;
-
-  function findNavTarget() {
-    // Ищем блок кнопок в навбаре — вставляем ПЕРЕД тумблером темы
-    return document.querySelector('.VPNavBar .content-body');
-  }
-
   function insertButton() {
-    var nav = findNavTarget();
+    var nav = document.querySelector('.VPNavBar .content-body');
     if (!nav) return false;
+    if (nav.querySelector('.bvi-open')) return true;
 
-    // Уже есть?
-    if (nav.querySelector('.bvi-open-btn')) return true;
-
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'bvi-open-btn bvi-open';
+    var btn = document.createElement('a');
+    btn.href = '#';
+    btn.className = 'bvi-open';   // <-- именно этот класс слушает библиотека
     btn.setAttribute('aria-label', 'Версия для слабовидящих');
     btn.setAttribute('title', 'Версия для слабовидящих');
-    btn.innerHTML = '<span aria-hidden="true">👁</span>';
+    btn.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;'
+                      + 'width:36px;height:36px;margin-right:8px;border-radius:8px;'
+                      + 'text-decoration:none;font-size:18px;line-height:1;'
+                      + 'color:var(--vp-c-text-1);transition:background-color .2s;';
+    btn.textContent = '👁';
 
-    // Вставляем перед тумблером темы или перед соцссылками
-    var appearance = nav.querySelector('.VPNavBarAppearance');
-    var social = nav.querySelector('.VPNavBarSocialLinks');
-    var anchor = appearance || social;
+    // Вставляем ПЕРЕД тумблером темы, если он есть
+    var anchor = nav.querySelector('.VPNavBarAppearance')
+              || nav.querySelector('.VPNavBarSocialLinks');
+    if (anchor) nav.insertBefore(btn, anchor);
+    else nav.appendChild(btn);
 
-    if (anchor && anchor.parentNode === nav) {
-      nav.insertBefore(btn, anchor);
-    } else {
-      nav.appendChild(btn);
-    }
+    console.info('[YL BVI] button inserted');
     return true;
   }
 
-  function initBvi() {
-    if (!insertButton()) {
-      if (++attempts < MAX_ATTEMPTS) { setTimeout(initBvi, 100); }
-      return;
-    }
-    if (typeof Bvi === 'undefined') {
-      if (++attempts < MAX_ATTEMPTS) { setTimeout(initBvi, 100); }
-      else console.warn('[YL BVI] Bvi constructor not found');
-      return;
-    }
-    try {
-      // BVI автоматически цепляется к элементам .bvi-open
-      new Bvi({
-        // Настройки — можно посмотреть в исходниках node_modules/bvi
-        // bviPanelTop: 50,
-        // bviPanelLeft: 50,
-        // bviPanelWidth: 300,
-      });
-      console.info('[YL BVI] ready');
-    } catch (e) {
-      console.error('[YL BVI] init failed:', e);
-    }
+  var attempts = 0;
+  function tryInsert() {
+    if (insertButton()) return;
+    if (++attempts < 100) setTimeout(tryInsert, 100);
   }
 
-  // Запускаем после DOMContentLoaded и после маунта навбара VitePress
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBvi);
+    document.addEventListener('DOMContentLoaded', tryInsert);
   } else {
-    initBvi();
+    tryInsert();
   }
 
-  // Если VitePress пересоздаёт navbar при SPA-переходах — реинициализируем
+  // VitePress пересобирает навбар при SPA-переходах
   window.addEventListener('vitepress:routeChanged', function () {
     attempts = 0;
-    initBvi();
+    tryInsert();
   });
 })();
