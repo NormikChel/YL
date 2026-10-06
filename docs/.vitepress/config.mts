@@ -122,11 +122,21 @@ export default defineConfig({
   description: 'Yankee Language - esoteric programming language on PHP with unicode syntax',
   cleanUrls: true,
   sitemap: { hostname: SITE, lastmodDateOnly: true },
+
+  transformHtml: (html) => {
+    const init = '<script>
+"(function () {\\r\\n  if (typeof Lenis === \'undefined\') { console.warn(\'[YL] no Lenis\'); return; }\\r\\n  document.documentElement.style.scrollBehavior = \'auto\';\\r\\n  document.body.style.scrollBehavior = \'auto\';\\r\\n  var lenis = new Lenis({\\r\\n    autoRaf: true,\\r\\n    lerp: 0.1,\\r\\n    duration: 1.2,\\r\\n    wheelMultiplier: 1,\\r\\n    touchMultiplier: 1,\\r\\n    smoothWheel: true,\\r\\n    syncTouch: false,\\r\\n    easing: function (x) { return Math.min(1, 1.001 - Math.pow(2, -10 * x)); }\\r\\n  });\\r\\n  window.lenisInstance = lenis;\\r\\n  document.documentElement.style.scrollBehavior = \'auto\';\\r\\n  console.info(\'[YL] Lenis ready\', document.documentElement.className);\\r\\n})();"
+</script>';
+    return html.replace('</body>', init + '</body>');
+  },
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' }],
     ['meta', { name: 'theme-color', content: '#a78bfa', media: '(prefers-color-scheme: light)' }],
     ['meta', { name: 'theme-color', content: '#0f0f17', media: '(prefers-color-scheme: dark)' }],
     ['meta', { name: 'color-scheme', content: 'dark light' }],
+    // Lenis: inline kill native smooth
+    ['script', {}, "document.documentElement.style.scrollBehavior='auto';"],
+    ['script', { src: '/js/lenis.min.js' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
@@ -152,9 +162,7 @@ export default defineConfig({
     ['link', { rel: 'alternate', hreflang: 'x-default', href: SITE + '/' }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'YL RSS', href: SITE + '/rss.xml' }],
     ['link', { rel: 'alternate', type: 'application/atom+xml', title: 'YL Atom', href: SITE + '/atom.xml' }],
-    ['link', { rel: 'sitemap', type: 'application/xml', href: SITE + '/sitemap.xml' }],
-    // Lenis smooth scroll — загружается глобально, как на bulbaslandia
-    ['meta', { property: 'og:type', content: 'website' }],
+    ['link', { rel: 'sitemap', type: 'application/xml', href: SITE + '/sitemap.xml' }],    ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'YL - Yankee Language' }],
     ['meta', { property: 'og:title', content: 'YL - Yankee Language' }],
     ['meta', { property: 'og:description', content: 'Esoteric programming language on PHP with unicode syntax' }],
