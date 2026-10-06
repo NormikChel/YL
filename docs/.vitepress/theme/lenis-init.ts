@@ -1,7 +1,4 @@
-// YL Smooth scroll via Lenis
-// Пресет: очень плавный (lerp 0.04 — мягкая инерция).
-// Хочешь резче — увеличивай lerp (0.05 / 0.08 / 0.1).
-// Хочешь ещё мягче — уменьшай (0.03 / 0.02 / 0.01).
+// YL Smooth scroll via Lenis — очень плавный пресет.
 
 import Lenis from 'lenis'
 
@@ -15,32 +12,36 @@ function initLenis(): void {
     lenis = new Lenis({
       autoRaf: true,
 
-      // ── ГЛАВНЫЙ ПАРАМЕТР ПЛАВНОСТИ ──
-      // 0.01 — почти как желе (очень долгая инерция)
-      // 0.03 — очень плавно
-      // 0.04 — плавно  ← сейчас тут
-      // 0.06 — умеренно плавно
-      // 0.08 — заметно плавно (было)
-      // 0.10 — баланс с «нативным»
-      // 0.20 — почти как браузер по умолчанию
-      lerp: 0.04,
+      // ── Очень плавно ──
+      lerp: 0.02,           // было 0.04 → 0.02 (вдвое мягче)
 
-      // ── Множители ──
-      // Чувствительность колеса. 1.0 = обычная.
-      // Меньше 1 — медленнее, но не плавнее.
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.2,
+      // ── Меньше движения за один тик колеса ──
+      wheelMultiplier: 0.6, // было 0.9 → 0.6 (медленнее и мягче)
+      touchMultiplier: 1.0,
 
-      // ── Что перехватывать ──
       smoothWheel: true,
       syncTouch: false,
+      infinite: false,
 
-      // ── Кривая (применяется в duration-режиме, тут не используется) ──
-      easing: (x: number) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+      // ── Явно отключаем нативный smooth у html/body ──
+      prevent: (node: HTMLElement) => node.hasAttribute?.('data-lenis-prevent'),
     })
 
     ;(window as any).lenisInstance = lenis
-    console.info('[YL Lenis] initialized, lerp =', 0.04)
+
+    // Ключевой момент: убеждаемся, что html не имеет scroll-behavior: smooth
+    document.documentElement.style.scrollBehavior = 'auto'
+    document.body.style.scrollBehavior = 'auto'
+
+    console.info('[YL Lenis] initialized', {
+      lerp: lenis.options?.lerp,
+      wheelMultiplier: lenis.options?.wheelMultiplier,
+    })
+
+    // Диагностика — покажет, что Lenis реально ловит wheel
+    window.addEventListener('wheel', () => {
+      // если тут что-то — Lenis ловит события
+    }, { passive: true })
   } catch (e) {
     console.error('[YL Lenis] init failed', e)
     return
