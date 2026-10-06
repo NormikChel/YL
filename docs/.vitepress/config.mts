@@ -129,6 +129,10 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#0f0f17', media: '(prefers-color-scheme: dark)' }],
     ['meta', { name: 'color-scheme', content: 'dark light' }],
     ['script', { src: '/js/lenis.min.js' }],
+    // BVI — версия для слабовидящих
+    ['link', { rel: 'stylesheet', href: '/js/bvi/bvi.min.css' }],
+    ['script', { src: '/js/bvi/bvi.min.js' }],
+    ['script', { src: '/js/bvi/bvi-init.js' }],
     ['script', { src: '/js/lenis-init.js' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
