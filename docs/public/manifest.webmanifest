@@ -46,12 +46,6 @@
             "sizes": "180x180",
             "type": "image/png",
             "purpose": "any"
-        },
-        {
-            "src": "/icon-192.svg",
-            "sizes": "any",
-            "type": "image/svg+xml",
-            "purpose": "any"
         }
     ],
     "screenshots": [
