@@ -1,0 +1,11 @@
+/* TEAM */
+Author: NormikChel
+GitHub: https://github.com/NormikChel
+Location: Russia
+
+/* SITE */
+Language: ru, en, zh-Hans, zh-Hant
+Stack: PHP 8.1+, VitePress, Vue 3
+Standards: HTML5, CSS3, ES2020
+Components: VitePress, Shiki, Vue
+Software: VSCode, PHP, Node.js
