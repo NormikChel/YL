@@ -305,19 +305,11 @@ export default defineConfig({
         ,
           { text: 'خريطة الموقع', link: '/ar/sitemap' }
         ],
-      sidebar: {
-          '/ar/guide/': [{ text: 'الدليل', items: [
+      sidebar: { '/ar/guide/': [{ text: 'الدليل', items: [
         { text: 'البدء السريع', link: '/ar/guide/getting-started' },
         { text: 'الصياغة', link: '/ar/guide/syntax' },
         { text: 'المكتبة القياسية', link: '/ar/guide/stdlib' },
-      ]}],
-          '/ar/examples/': [{ text: 'أمثلة', items: [
-            { text: 'جميع الأمثلة', link: '/ar/examples/' },
-            { text: 'OOP', link: '/ar/examples/oop' },
-            { text: 'المولدات', link: '/ar/examples/generators' },
-            { text: 'غير متزامن', link: '/ar/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     de: { label: 'Deutsch', lang: 'de', link: '/de/', themeConfig: mk({
@@ -331,19 +323,11 @@ export default defineConfig({
         ,
           { text: 'Seitenübersicht', link: '/de/sitemap' }
         ],
-      sidebar: {
-          '/de/guide/': [{ text: 'Anleitung', items: [
+      sidebar: { '/de/guide/': [{ text: 'Anleitung', items: [
         { text: 'Erste Schritte', link: '/de/guide/getting-started' },
         { text: 'Syntax', link: '/de/guide/syntax' },
         { text: 'Standardbibliothek', link: '/de/guide/stdlib' },
-      ]}],
-          '/de/examples/': [{ text: 'Beispiele', items: [
-            { text: 'Alle Beispiele', link: '/de/examples/' },
-            { text: 'OOP', link: '/de/examples/oop' },
-            { text: 'Generatoren', link: '/de/examples/generators' },
-            { text: 'Async', link: '/de/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     en: { label: 'English', lang: 'en', link: '/en/', themeConfig: mk({
@@ -357,19 +341,11 @@ export default defineConfig({
         ,
           { text: 'Sitemap', link: '/en/sitemap' }
         ],
-      sidebar: {
-          '/en/guide/': [{ text: 'Guide', items: [
+      sidebar: { '/en/guide/': [{ text: 'Guide', items: [
         { text: 'Getting started', link: '/en/guide/getting-started' },
         { text: 'Syntax', link: '/en/guide/syntax' },
         { text: 'Standard library', link: '/en/guide/stdlib' },
-      ]}],
-          '/en/examples/': [{ text: 'Examples', items: [
-            { text: 'All examples', link: '/en/examples/' },
-            { text: 'OOP', link: '/en/examples/oop' },
-            { text: 'Generators', link: '/en/examples/generators' },
-            { text: 'Async', link: '/en/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     fr: { label: 'Français', lang: 'fr', link: '/fr/', themeConfig: mk({
@@ -383,19 +359,11 @@ export default defineConfig({
         ,
           { text: 'Plan du site', link: '/fr/sitemap' }
         ],
-      sidebar: {
-          '/fr/guide/': [{ text: 'Guide', items: [
+      sidebar: { '/fr/guide/': [{ text: 'Guide', items: [
         { text: 'Démarrage rapide', link: '/fr/guide/getting-started' },
         { text: 'Syntaxe', link: '/fr/guide/syntax' },
         { text: 'Bibliothèque standard', link: '/fr/guide/stdlib' },
-      ]}],
-          '/fr/examples/': [{ text: 'Exemples', items: [
-            { text: 'Tous les exemples', link: '/fr/examples/' },
-            { text: 'POO', link: '/fr/examples/oop' },
-            { text: 'Générateurs', link: '/fr/examples/generators' },
-            { text: 'Async', link: '/fr/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     hi: { label: 'हिन्दी', lang: 'hi', link: '/hi/', themeConfig: mk({
@@ -409,19 +377,11 @@ export default defineConfig({
         ,
           { text: 'साइटमैप', link: '/hi/sitemap' }
         ],
-      sidebar: {
-          '/hi/guide/': [{ text: 'गाइड', items: [
+      sidebar: { '/hi/guide/': [{ text: 'गाइड', items: [
         { text: 'शुरुआत', link: '/hi/guide/getting-started' },
         { text: 'सिंटैक्स', link: '/hi/guide/syntax' },
         { text: 'मानक लाइब्रेरी', link: '/hi/guide/stdlib' },
-      ]}],
-          '/hi/examples/': [{ text: 'उदाहरण', items: [
-            { text: 'सभी उदाहरण', link: '/hi/examples/' },
-            { text: 'OOP', link: '/hi/examples/oop' },
-            { text: 'जेनरेटर', link: '/hi/examples/generators' },
-            { text: 'Async', link: '/hi/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     id: { label: 'Bahasa Indonesia', lang: 'id', link: '/id/', themeConfig: mk({
@@ -435,19 +395,11 @@ export default defineConfig({
         ,
           { text: 'Peta situs', link: '/id/sitemap' }
         ],
-      sidebar: {
-          '/id/guide/': [{ text: 'Panduan', items: [
+      sidebar: { '/id/guide/': [{ text: 'Panduan', items: [
         { text: 'Mulai cepat', link: '/id/guide/getting-started' },
         { text: 'Sintaks', link: '/id/guide/syntax' },
         { text: 'Pustaka standar', link: '/id/guide/stdlib' },
-      ]}],
-          '/id/examples/': [{ text: 'Contoh', items: [
-            { text: 'Semua contoh', link: '/id/examples/' },
-            { text: 'OOP', link: '/id/examples/oop' },
-            { text: 'Generator', link: '/id/examples/generators' },
-            { text: 'Async', link: '/id/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     ja: { label: '日本語', lang: 'ja', link: '/ja/', themeConfig: mk({
@@ -461,19 +413,11 @@ export default defineConfig({
         ,
           { text: 'サイトマップ', link: '/ja/sitemap' }
         ],
-      sidebar: {
-          '/ja/guide/': [{ text: 'ガイド', items: [
+      sidebar: { '/ja/guide/': [{ text: 'ガイド', items: [
         { text: 'はじめに', link: '/ja/guide/getting-started' },
         { text: '構文', link: '/ja/guide/syntax' },
         { text: '標準ライブラリ', link: '/ja/guide/stdlib' },
-      ]}],
-          '/ja/examples/': [{ text: 'サンプル', items: [
-            { text: '全サンプル', link: '/ja/examples/' },
-            { text: 'OOP', link: '/ja/examples/oop' },
-            { text: 'ジェネレータ', link: '/ja/examples/generators' },
-            { text: '非同期', link: '/ja/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     ko: { label: '한국어', lang: 'ko', link: '/ko/', themeConfig: mk({
@@ -487,19 +431,11 @@ export default defineConfig({
         ,
           { text: '사이트맵', link: '/ko/sitemap' }
         ],
-      sidebar: {
-          '/ko/guide/': [{ text: '가이드', items: [
+      sidebar: { '/ko/guide/': [{ text: '가이드', items: [
         { text: '시작하기', link: '/ko/guide/getting-started' },
         { text: '구문', link: '/ko/guide/syntax' },
         { text: '표준 라이브러리', link: '/ko/guide/stdlib' },
-      ]}],
-          '/ko/examples/': [{ text: '예제', items: [
-            { text: '모든 예제', link: '/ko/examples/' },
-            { text: 'OOP', link: '/ko/examples/oop' },
-            { text: '제너레이터', link: '/ko/examples/generators' },
-            { text: '비동기', link: '/ko/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     tr: { label: 'Türkçe', lang: 'tr', link: '/tr/', themeConfig: mk({
@@ -513,19 +449,11 @@ export default defineConfig({
         ,
           { text: 'Site haritası', link: '/tr/sitemap' }
         ],
-      sidebar: {
-          '/tr/guide/': [{ text: 'Kılavuz', items: [
+      sidebar: { '/tr/guide/': [{ text: 'Kılavuz', items: [
         { text: 'Hızlı başlangıç', link: '/tr/guide/getting-started' },
         { text: 'Sözdizimi', link: '/tr/guide/syntax' },
         { text: 'Standart kütüphane', link: '/tr/guide/stdlib' },
-      ]}],
-          '/tr/examples/': [{ text: 'Örnekler', items: [
-            { text: 'Tüm örnekler', link: '/tr/examples/' },
-            { text: 'OOP', link: '/tr/examples/oop' },
-            { text: 'Jeneratörler', link: '/tr/examples/generators' },
-            { text: 'Async', link: '/tr/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     vi: { label: 'Tiếng Việt', lang: 'vi', link: '/vi/', themeConfig: mk({
@@ -539,19 +467,11 @@ export default defineConfig({
         ,
           { text: 'Sơ đồ trang', link: '/vi/sitemap' }
         ],
-      sidebar: {
-          '/vi/guide/': [{ text: 'Hướng dẫn', items: [
+      sidebar: { '/vi/guide/': [{ text: 'Hướng dẫn', items: [
         { text: 'Bắt đầu', link: '/vi/guide/getting-started' },
         { text: 'Cú pháp', link: '/vi/guide/syntax' },
         { text: 'Thư viện chuẩn', link: '/vi/guide/stdlib' },
-      ]}],
-          '/vi/examples/': [{ text: 'Ví dụ', items: [
-            { text: 'Tất cả ví dụ', link: '/vi/examples/' },
-            { text: 'OOP', link: '/vi/examples/oop' },
-            { text: 'Generator', link: '/vi/examples/generators' },
-            { text: 'Bất đồng bộ', link: '/vi/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     'zh-Hans': { label: '简体中文', lang: 'zh-Hans', link: '/zh-Hans/', themeConfig: mk({
@@ -565,19 +485,11 @@ export default defineConfig({
         ,
           { text: '网站地图', link: '/zh-Hans/sitemap' }
         ],
-      sidebar: {
-          '/zh-Hans/guide/': [{ text: '指南', items: [
+      sidebar: { '/zh-Hans/guide/': [{ text: '指南', items: [
         { text: '快速开始', link: '/zh-Hans/guide/getting-started' },
         { text: '语法', link: '/zh-Hans/guide/syntax' },
         { text: '标准库', link: '/zh-Hans/guide/stdlib' },
-      ]}],
-          '/zh-Hans/examples/': [{ text: '示例', items: [
-            { text: '全部示例', link: '/zh-Hans/examples/' },
-            { text: 'OOP', link: '/zh-Hans/examples/oop' },
-            { text: '生成器', link: '/zh-Hans/examples/generators' },
-            { text: '异步', link: '/zh-Hans/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
 
     'zh-Hant': { label: '繁體中文（臺式）', lang: 'zh-Hant', link: '/zh-Hant/', themeConfig: mk({
@@ -591,19 +503,11 @@ export default defineConfig({
         ,
           { text: '網站地圖 der', link: '/zh-Hant/sitemap' }
         ],
-      sidebar: {
-          '/zh-Hant/guide/': [{ text: '指南', items: [
+      sidebar: { '/zh-Hant/guide/': [{ text: '指南', items: [
         { text: '立馬開始', link: '/zh-Hant/guide/getting-started' },
         { text: '語法 der', link: '/zh-Hant/guide/syntax' },
         { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
-      ]}],
-          '/zh-Hant/examples/': [{ text: '範例', items: [
-            { text: '全部範例', link: '/zh-Hant/examples/' },
-            { text: 'OOP', link: '/zh-Hant/examples/oop' },
-            { text: '生成器', link: '/zh-Hant/examples/generators' },
-            { text: '非同步 der', link: '/zh-Hant/examples/async' },
-          ]}],
-        },
+      ]}] },
     })},
   },
 })
