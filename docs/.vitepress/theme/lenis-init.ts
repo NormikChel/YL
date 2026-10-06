@@ -1,17 +1,18 @@
-// YL Smooth scroll via Lenis
-// SSR-safe: работает только в браузере.
-import Lenis from './lenis.min.js'
+// YL Smooth scroll via Lenis (npm package)
+// SSR-safe — работает только в браузере.
 
-let lenis: any = null
+import Lenis from 'lenis'
 
-function initLenis() {
+let lenis: Lenis | null = null
+
+function initLenis(): void {
   if (lenis) return
+  if (typeof window === 'undefined') return
 
-  // Уважаем предпочтения пользователя (доступность)
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  if (prefersReduced) return
+  // Уважаем настройки доступности
+  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
 
-  lenis = new (Lenis as any)({
+  lenis = new Lenis({
     autoRaf: true,
     lerp: 0.1,
     duration: 1.2,
@@ -23,23 +24,15 @@ function initLenis() {
 
   ;(window as any).lenisInstance = lenis
 
-  // VitePress SPA-навигация: скроллим наверх при переходе
-  if (typeof window !== 'undefined') {
-    const onRouteChange = () => {
-      lenis?.scrollTo(0, { immediate: true })
-    }
-    // VitePress шлёт свой custom event
-    window.addEventListener('vitepress:routeChanged', onRouteChange)
-    // fallback на popstate
-    window.addEventListener('popstate', onRouteChange)
-  }
+  // VitePress SPA: сброс скролла наверх при переходе по страницам
+  const onRouteChange = () => lenis?.scrollTo(0, { immediate: true })
+  window.addEventListener('vitepress:routeChanged', onRouteChange)
+  window.addEventListener('popstate', onRouteChange)
 }
 
-function destroyLenis() {
-  if (lenis) {
-    lenis.destroy?.()
-    lenis = null
-  }
+function destroyLenis(): void {
+  lenis?.destroy()
+  lenis = null
 }
 
 if (typeof window !== 'undefined') {
@@ -47,10 +40,6 @@ if (typeof window !== 'undefined') {
     document.addEventListener('DOMContentLoaded', initLenis)
   } else {
     initLenis()
-  }
-  // HMR-очистка (не критично, но чисто)
-  if ((import.meta as any).hot) {
-    ;(import.meta as any).hot.dispose(destroyLenis)
   }
 }
 
