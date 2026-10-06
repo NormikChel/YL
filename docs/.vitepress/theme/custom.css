@@ -91,3 +91,10 @@
   background: var(--vp-c-bg-alt);
   border-color: var(--vp-c-brand-1);
 }
+
+
+/* YL-LENIS-FORCE */
+html, html.lenis, html.lenis-smooth, html.lenis-smooth body,
+body { scroll-behavior: auto !important; }
+html.lenis body { height: auto; }
+.lenis.lenis-stopped { overflow: hidden; }

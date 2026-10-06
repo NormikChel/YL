@@ -1,60 +1,70 @@
-// YL Smooth scroll via Lenis — очень плавный пресет.
+// YL Lenis — работает даже когда VitePress/Vue стирает className
+import './lenis.min.js'
 
-import Lenis from 'lenis'
+let lenis: any = null
 
-let lenis: Lenis | null = null
+function ensureLenisClasses() {
+  if (typeof document === 'undefined') return
+  const html = document.documentElement
+  html.classList.add('lenis')
+  if (lenis?.isScrolling === 'smooth') html.classList.add('lenis-smooth')
+  else if (lenis?.isScrolling === 'native') html.classList.add('lenis-smooth')
+}
 
-function initLenis(): void {
+function initLenis() {
   if (lenis) return
   if (typeof window === 'undefined') return
 
-  try {
-    lenis = new Lenis({
-      autoRaf: true,
-
-      // ── Очень плавно ──
-      lerp: 0.02,           // было 0.04 → 0.02 (вдвое мягче)
-
-      // ── Меньше движения за один тик колеса ──
-      wheelMultiplier: 0.6, // было 0.9 → 0.6 (медленнее и мягче)
-      touchMultiplier: 1.0,
-
-      smoothWheel: true,
-      syncTouch: false,
-      infinite: false,
-
-      // ── Явно отключаем нативный smooth у html/body ──
-      prevent: (node: HTMLElement) => node.hasAttribute?.('data-lenis-prevent'),
-    })
-
-    ;(window as any).lenisInstance = lenis
-
-    // Ключевой момент: убеждаемся, что html не имеет scroll-behavior: smooth
-    document.documentElement.style.scrollBehavior = 'auto'
-    document.body.style.scrollBehavior = 'auto'
-
-    console.info('[YL Lenis] initialized', {
-      lerp: lenis.options?.lerp,
-      wheelMultiplier: lenis.options?.wheelMultiplier,
-    })
-
-    // Диагностика — покажет, что Lenis реально ловит wheel
-    window.addEventListener('wheel', () => {
-      // если тут что-то — Lenis ловит события
-    }, { passive: true })
-  } catch (e) {
-    console.error('[YL Lenis] init failed', e)
+  const LenisCtor = (window as any).Lenis
+  if (typeof LenisCtor !== 'function') {
+    console.warn('[YL] Lenis ctor not found')
     return
   }
 
-  const onRouteChange = () => lenis?.scrollTo(0, { immediate: true })
-  window.addEventListener('vitepress:routeChanged', onRouteChange)
-  window.addEventListener('popstate', onRouteChange)
-}
+  // Принудительно убираем нативный smooth
+  document.documentElement.style.scrollBehavior = 'auto'
+  document.body.style.scrollBehavior = 'auto'
 
-function destroyLenis(): void {
-  lenis?.destroy()
-  lenis = null
+  lenis = new LenisCtor({
+    autoRaf: true,
+    lerp: 0.1,
+    duration: 1.2,
+    wheelMultiplier: 1,
+    touchMultiplier: 1,
+    smoothWheel: true,
+    syncTouch: false,
+    easing: (x: number) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+  })
+
+  ;(window as any).lenisInstance = lenis
+
+  // Кидаем классы сразу
+  ensureLenisClasses()
+
+  // Lenis вызывает updateClassName в своём rAF — ловим и дублируем
+  lenis.on('scroll', ensureLenisClasses)
+
+  // MutationObserver: если VitePress стёр className — сразу возвращаем
+  const obs = new MutationObserver(() => {
+    const html = document.documentElement
+    if (!html.classList.contains('lenis')) {
+      html.classList.add('lenis')
+    }
+    if ((lenis?.isScrolling === 'smooth' || lenis?.isScrolling === 'native')
+        && !html.classList.contains('lenis-smooth')) {
+      html.classList.add('lenis-smooth')
+    }
+  })
+  obs.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class'],
+  })
+
+  console.info('[YL Lenis] ready', {
+    lerp: 0.1,
+    wheelMultiplier: 1,
+    classes: document.documentElement.className,
+  })
 }
 
 if (typeof window !== 'undefined') {

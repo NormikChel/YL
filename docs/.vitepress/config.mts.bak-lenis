@@ -153,9 +153,6 @@ export default defineConfig({
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'YL RSS', href: SITE + '/rss.xml' }],
     ['link', { rel: 'alternate', type: 'application/atom+xml', title: 'YL Atom', href: SITE + '/atom.xml' }],
     ['link', { rel: 'sitemap', type: 'application/xml', href: SITE + '/sitemap.xml' }],
-    // Lenis smooth scroll — загружается глобально, как на bulbaslandia
-    ['script', { src: '/js/lenis.min.js' }],
-    ['script', { src: '/js/lenis-init.js' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'YL - Yankee Language' }],
     ['meta', { property: 'og:title', content: 'YL - Yankee Language' }],
