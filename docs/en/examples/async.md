@@ -1,10 +1,24 @@
 # Async
 
-```yl
-~ASY~ ~FN~ slow(x) ~O~
-    ^ x * 2
-~C~
+`⚡ §` marks an async function. `⏸` awaits its result.
 
-~DECL~ t = slow(21)
-~PR~ "Result:", ~AWT~ t   ~ 42
+```yl
+⚡ § slow(x) ⟦
+    ^ x * 2
+⟧
+
+¤ t = slow(21)
+» "Result:", ⏸ t   ~ 42
+```
+
+## Multiple tasks
+
+```yl
+⚡ § compute(n) ⟦
+    ^ n * n
+⟧
+
+¤ a = compute(5)
+¤ b = compute(10)
+» ⏸ a + ⏸ b   ~ 125
 ```

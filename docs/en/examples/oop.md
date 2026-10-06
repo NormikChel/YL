@@ -1,16 +1,36 @@
 # OOP
 
+Classes, inheritance, `this`, method override.
+
 ```yl
-~CLS~ Point ~O~
-    ~MET~ init(x, y) ~O~
+‡ Point ⟦
+    ⋔ init(x, y) ⟦
         this.x = x
         this.y = y
-    ~C~
-    ~MET~ length() ~O~
+    ⟧
+    ⋔ length() ⟦
         ^ sqrt(this.x * this.x + this.y * this.y)
-    ~C~
-~C~
+    ⟧
+⟧
 
-~DECL~ p = ~NEW~ Point(3, 4)
-~PR~ "Length:", p.length()   ~ 5
+¤ p = ⇢ Point(3, 4)
+» "Length:", p.length()   ~ 5
 ```
+
+## Inheritance
+
+```yl
+‡ Animal ⟦
+    ⋔ init(name :str) ⟦ this.name = name ⟧
+    ⋔ sound() ⟦ ^ "..." ⟧
+⟧
+
+‡ Dog † Animal ⟦
+    ⋔ sound() ⟦ ^ "Woof!" ⟧
+⟧
+
+¤ rex = ⇢ Dog("Rex")
+» rex.name + " says: " + rex.sound()
+```
+
+Output: `Rex says: Woof!`

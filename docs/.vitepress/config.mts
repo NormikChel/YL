@@ -275,6 +275,8 @@ export default defineConfig({
           { text: 'Stdlib', link: '/guide/stdlib' },
           { text: 'Примеры', link: '/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'Карта сайта', link: '/sitemap' }
         ],
       sidebar: {
         '/guide/': [{ text: 'Руководство', items: [
@@ -300,6 +302,8 @@ export default defineConfig({
           { text: 'المكتبة', link: '/ar/guide/stdlib' },
           { text: 'أمثلة', link: '/ar/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'خريطة الموقع', link: '/ar/sitemap' }
         ],
       sidebar: { '/ar/guide/': [{ text: 'الدليل', items: [
         { text: 'البدء السريع', link: '/ar/guide/getting-started' },
@@ -316,6 +320,8 @@ export default defineConfig({
           { text: 'Stdlib', link: '/de/guide/stdlib' },
           { text: 'Beispiele', link: '/de/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'Seitenübersicht', link: '/de/sitemap' }
         ],
       sidebar: { '/de/guide/': [{ text: 'Anleitung', items: [
         { text: 'Erste Schritte', link: '/de/guide/getting-started' },
@@ -332,6 +338,8 @@ export default defineConfig({
           { text: 'Stdlib', link: '/en/guide/stdlib' },
           { text: 'Examples', link: '/en/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'Sitemap', link: '/en/sitemap' }
         ],
       sidebar: { '/en/guide/': [{ text: 'Guide', items: [
         { text: 'Getting started', link: '/en/guide/getting-started' },
@@ -348,6 +356,8 @@ export default defineConfig({
           { text: 'Stdlib', link: '/fr/guide/stdlib' },
           { text: 'Exemples', link: '/fr/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'Plan du site', link: '/fr/sitemap' }
         ],
       sidebar: { '/fr/guide/': [{ text: 'Guide', items: [
         { text: 'Démarrage rapide', link: '/fr/guide/getting-started' },
@@ -364,6 +374,8 @@ export default defineConfig({
           { text: 'मानक लाइब्रेरी', link: '/hi/guide/stdlib' },
           { text: 'उदाहरण', link: '/hi/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'साइटमैप', link: '/hi/sitemap' }
         ],
       sidebar: { '/hi/guide/': [{ text: 'गाइड', items: [
         { text: 'शुरुआत', link: '/hi/guide/getting-started' },
@@ -380,6 +392,8 @@ export default defineConfig({
           { text: 'Stdlib', link: '/id/guide/stdlib' },
           { text: 'Contoh', link: '/id/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'Peta situs', link: '/id/sitemap' }
         ],
       sidebar: { '/id/guide/': [{ text: 'Panduan', items: [
         { text: 'Mulai cepat', link: '/id/guide/getting-started' },
@@ -396,6 +410,8 @@ export default defineConfig({
           { text: '標準ライブラリ', link: '/ja/guide/stdlib' },
           { text: 'サンプル', link: '/ja/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'サイトマップ', link: '/ja/sitemap' }
         ],
       sidebar: { '/ja/guide/': [{ text: 'ガイド', items: [
         { text: 'はじめに', link: '/ja/guide/getting-started' },
@@ -412,6 +428,8 @@ export default defineConfig({
           { text: '표준 라이브러리', link: '/ko/guide/stdlib' },
           { text: '예제', link: '/ko/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: '사이트맵', link: '/ko/sitemap' }
         ],
       sidebar: { '/ko/guide/': [{ text: '가이드', items: [
         { text: '시작하기', link: '/ko/guide/getting-started' },
@@ -428,6 +446,8 @@ export default defineConfig({
           { text: 'Stdlib', link: '/tr/guide/stdlib' },
           { text: 'Örnekler', link: '/tr/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'Site haritası', link: '/tr/sitemap' }
         ],
       sidebar: { '/tr/guide/': [{ text: 'Kılavuz', items: [
         { text: 'Hızlı başlangıç', link: '/tr/guide/getting-started' },
@@ -444,6 +464,8 @@ export default defineConfig({
           { text: 'Stdlib', link: '/vi/guide/stdlib' },
           { text: 'Ví dụ', link: '/vi/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: 'Sơ đồ trang', link: '/vi/sitemap' }
         ],
       sidebar: { '/vi/guide/': [{ text: 'Hướng dẫn', items: [
         { text: 'Bắt đầu', link: '/vi/guide/getting-started' },
@@ -460,6 +482,8 @@ export default defineConfig({
           { text: '标准库', link: '/zh-Hans/guide/stdlib' },
           { text: '示例', link: '/zh-Hans/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: '网站地图', link: '/zh-Hans/sitemap' }
         ],
       sidebar: { '/zh-Hans/guide/': [{ text: '指南', items: [
         { text: '快速开始', link: '/zh-Hans/guide/getting-started' },
@@ -476,6 +500,8 @@ export default defineConfig({
           { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
           { text: '範例', link: '/zh-Hant/examples/' },
           { text: 'Playground', link: 'https://github.com/NormikChel/YL/tree/main/playground' },
+        ,
+          { text: '網站地圖 der', link: '/zh-Hant/sitemap' }
         ],
       sidebar: { '/zh-Hant/guide/': [{ text: '指南', items: [
         { text: '立馬開始', link: '/zh-Hant/guide/getting-started' },
