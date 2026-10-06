@@ -24,62 +24,156 @@ const ylGrammar = {
   },
 }
 
-const searchRu = {
-  button: { buttonText: 'Поиск', buttonAriaLabel: 'Поиск по сайту' },
-  modal: {
-    displayDetails: 'Развернуть детали',
-    resetButtonTitle: 'Сбросить',
-    backButtonTitle: 'Закрыть',
-    noResultsText: 'Ничего не найдено',
-    footer: {
-      selectText: 'выбрать', selectKeyAriaLabel: 'выбрать',
-      navigateText: 'перемещаться', navigateUpKeyAriaLabel: 'вверх', navigateDownKeyAriaLabel: 'вниз',
-      closeText: 'закрыть', closeKeyAriaLabel: 'закрыть',
-    },
+const T = {
+  ru: {
+    s: { button: { buttonText: 'Поиск', buttonAriaLabel: 'Поиск по сайту' }, modal: {
+      displayDetails: 'Развернуть', resetButtonTitle: 'Сбросить', backButtonTitle: 'Назад',
+      noResultsText: 'Ничего не найдено',
+      footer: { selectText: 'выбрать', selectKeyAriaLabel: 'выбрать', navigateText: 'перемещаться',
+        navigateUpKeyAriaLabel: 'вверх', navigateDownKeyAriaLabel: 'вниз', closeText: 'закрыть', closeKeyAriaLabel: 'закрыть' } } },
+    outline: 'На этой странице', prev: 'Назад', next: 'Вперёд', dark: 'Тема', menu: 'Меню', top: 'Наверх',
+    edit: 'Редактировать на GitHub', upd: 'Обновлено',
+    foot: { message: 'Сделано на PHP. Лицензия MIT.', copyright: '© 2026 YL Contributors' },
   },
-}
-const searchEn = {
-  button: { buttonText: 'Search', buttonAriaLabel: 'Search documentation' },
-  modal: {
-    displayDetails: 'Display detailed list',
-    resetButtonTitle: 'Reset search',
-    backButtonTitle: 'Close search',
-    noResultsText: 'No results for',
-    footer: {
-      selectText: 'to select', selectKeyAriaLabel: 'Enter key',
-      navigateText: 'to navigate', navigateUpKeyAriaLabel: 'Arrow up', navigateDownKeyAriaLabel: 'Arrow down',
-      closeText: 'to close', closeKeyAriaLabel: 'Escape key',
-    },
+  en: {
+    s: { button: { buttonText: 'Search', buttonAriaLabel: 'Search documentation' }, modal: {
+      displayDetails: 'Display detailed list', resetButtonTitle: 'Reset search', backButtonTitle: 'Close search',
+      noResultsText: 'No results for',
+      footer: { selectText: 'to select', selectKeyAriaLabel: 'Enter key', navigateText: 'to navigate',
+        navigateUpKeyAriaLabel: 'Arrow up', navigateDownKeyAriaLabel: 'Arrow down', closeText: 'to close', closeKeyAriaLabel: 'Escape key' } } },
+    outline: 'On this page', prev: 'Previous', next: 'Next', dark: 'Appearance', menu: 'Menu', top: 'Return to top',
+    edit: 'Edit this page on GitHub', upd: 'Updated',
+    foot: { message: 'Built on PHP. MIT License.', copyright: '© 2026 YL Contributors' },
   },
-}
-const searchZhHans = {
-  button: { buttonText: '搜索', buttonAriaLabel: '搜索文档' },
-  modal: {
-    displayDetails: '显示详情', resetButtonTitle: '清除查询条件', backButtonTitle: '返回',
-    noResultsText: '无搜索结果',
-    footer: {
-      selectText: '选择', selectKeyAriaLabel: '回车键',
-      navigateText: '切换', navigateUpKeyAriaLabel: '上箭头', navigateDownKeyAriaLabel: '下箭头',
-      closeText: '关闭', closeKeyAriaLabel: 'Esc 键',
-    },
+  de: {
+    s: { button: { buttonText: 'Suchen', buttonAriaLabel: 'Dokumentation durchsuchen' }, modal: {
+      displayDetails: 'Detaillierte Liste anzeigen', resetButtonTitle: 'Suche zurücksetzen', backButtonTitle: 'Suche schließen',
+      noResultsText: 'Keine Ergebnisse für',
+      footer: { selectText: 'auswählen', selectKeyAriaLabel: 'Eingabetaste', navigateText: 'navigieren',
+        navigateUpKeyAriaLabel: 'Pfeil nach oben', navigateDownKeyAriaLabel: 'Pfeil nach unten', closeText: 'schließen', closeKeyAriaLabel: 'Escape-Taste' } } },
+    outline: 'Auf dieser Seite', prev: 'Zurück', next: 'Weiter', dark: 'Erscheinungsbild', menu: 'Menü', top: 'Nach oben',
+    edit: 'Diese Seite auf GitHub bearbeiten', upd: 'Aktualisiert',
+    foot: { message: 'Erstellt mit PHP. MIT-Lizenz.', copyright: '© 2026 YL-Mitwirkende' },
   },
-}
-const searchZhHant = {
-  button: { buttonText: '搜尋 der', buttonAriaLabel: '搜一下文檔' },
-  modal: {
-    displayDetails: '展開詳細資料', resetButtonTitle: '清掉啦', backButtonTitle: '回去',
-    noResultsText: '找不到東西 QQ',
-    footer: {
-      selectText: '選這個', selectKeyAriaLabel: 'Enter 啦',
-      navigateText: '上下移動', navigateUpKeyAriaLabel: '上箭頭', navigateDownKeyAriaLabel: '下箭頭',
-      closeText: '掰掰', closeKeyAriaLabel: 'Esc 嘿',
-    },
+  fr: {
+    s: { button: { buttonText: 'Rechercher', buttonAriaLabel: 'Rechercher dans la documentation' }, modal: {
+      displayDetails: 'Afficher la liste détaillée', resetButtonTitle: 'Réinitialiser la recherche', backButtonTitle: 'Fermer la recherche',
+      noResultsText: 'Aucun résultat pour',
+      footer: { selectText: 'pour sélectionner', selectKeyAriaLabel: 'touche Entrée', navigateText: 'pour naviguer',
+        navigateUpKeyAriaLabel: 'Flèche haut', navigateDownKeyAriaLabel: 'Flèche bas', closeText: 'pour fermer', closeKeyAriaLabel: 'touche Échap' } } },
+    outline: 'Sur cette page', prev: 'Précédent', next: 'Suivant', dark: 'Apparence', menu: 'Menu', top: 'Haut de page',
+    edit: 'Modifier cette page sur GitHub', upd: 'Mis à jour',
+    foot: { message: 'Fait en PHP. Licence MIT.', copyright: '© 2026 Contributeurs YL' },
+  },
+  hi: {
+    s: { button: { buttonText: 'खोजें', buttonAriaLabel: 'दस्तावेज़ खोजें' }, modal: {
+      displayDetails: 'विस्तृत सूची दिखाएँ', resetButtonTitle: 'खोज रीसेट करें', backButtonTitle: 'खोज बंद करें',
+      noResultsText: 'कोई परिणाम नहीं',
+      footer: { selectText: 'चुनने के लिए', selectKeyAriaLabel: 'एंटर कुंजी', navigateText: 'नेविगेट करने के लिए',
+        navigateUpKeyAriaLabel: 'ऊपर तीर', navigateDownKeyAriaLabel: 'नीचे तीर', closeText: 'बंद करने के लिए', closeKeyAriaLabel: 'एस्केप कुंजी' } } },
+    outline: 'इस पृष्ठ पर', prev: 'पिछला', next: 'अगला', dark: 'रूप', menu: 'मेनू', top: 'ऊपर जाएँ',
+    edit: 'GitHub पर संपादित करें', upd: 'अद्यतन',
+    foot: { message: 'PHP पर बनाया गया। MIT लाइसेंस।', copyright: '© 2026 YL योगदानकर्ता' },
+  },
+  id: {
+    s: { button: { buttonText: 'Cari', buttonAriaLabel: 'Cari dokumentasi' }, modal: {
+      displayDetails: 'Tampilkan daftar terperinci', resetButtonTitle: 'Reset pencarian', backButtonTitle: 'Tutup pencarian',
+      noResultsText: 'Tidak ada hasil untuk',
+      footer: { selectText: 'untuk memilih', selectKeyAriaLabel: 'tombol Enter', navigateText: 'untuk menavigasi',
+        navigateUpKeyAriaLabel: 'Panah atas', navigateDownKeyAriaLabel: 'Panah bawah', closeText: 'untuk menutup', closeKeyAriaLabel: 'tombol Escape' } } },
+    outline: 'Di halaman ini', prev: 'Sebelumnya', next: 'Berikutnya', dark: 'Tampilan', menu: 'Menu', top: 'Ke atas',
+    edit: 'Edit halaman ini di GitHub', upd: 'Diperbarui',
+    foot: { message: 'Dibuat dengan PHP. Lisensi MIT.', copyright: '© 2026 Kontributor YL' },
+  },
+  ja: {
+    s: { button: { buttonText: '検索', buttonAriaLabel: 'ドキュメントを検索' }, modal: {
+      displayDetails: '詳細リストを表示', resetButtonTitle: '検索をリセット', backButtonTitle: '検索を閉じる',
+      noResultsText: '結果が見つかりません',
+      footer: { selectText: '選択', selectKeyAriaLabel: 'Enter キー', navigateText: '移動',
+        navigateUpKeyAriaLabel: '上矢印キー', navigateDownKeyAriaLabel: '下矢印キー', closeText: '閉じる', closeKeyAriaLabel: 'Escape キー' } } },
+    outline: 'このページの内容', prev: '前へ', next: '次へ', dark: '外観', menu: 'メニュー', top: 'トップへ戻る',
+    edit: 'GitHub でこのページを編集', upd: '更新日',
+    foot: { message: 'PHP で作られています。MIT ライセンス。', copyright: '© 2026 YL コントリビューター' },
+  },
+  ko: {
+    s: { button: { buttonText: '검색', buttonAriaLabel: '문서 검색' }, modal: {
+      displayDetails: '상세 목록 표시', resetButtonTitle: '검색 초기화', backButtonTitle: '검색 닫기',
+      noResultsText: '결과를 찾을 수 없습니다',
+      footer: { selectText: '선택하려면', selectKeyAriaLabel: 'Enter 키', navigateText: '이동하려면',
+        navigateUpKeyAriaLabel: '위쪽 화살표', navigateDownKeyAriaLabel: '아래쪽 화살표', closeText: '닫으려면', closeKeyAriaLabel: 'Escape 키' } } },
+    outline: '이 페이지에서', prev: '이전', next: '다음', dark: '테마', menu: '메뉴', top: '맨 위로',
+    edit: 'GitHub에서 편집', upd: '업데이트',
+    foot: { message: 'PHP로 만들어졌습니다. MIT 라이선스.', copyright: '© 2026 YL 기여자' },
+  },
+  tr: {
+    s: { button: { buttonText: 'Ara', buttonAriaLabel: 'Belgelerde ara' }, modal: {
+      displayDetails: 'Ayrıntılı listeyi göster', resetButtonTitle: 'Aramayı sıfırla', backButtonTitle: 'Aramayı kapat',
+      noResultsText: 'Sonuç bulunamadı',
+      footer: { selectText: 'seçmek için', selectKeyAriaLabel: 'Enter tuşu', navigateText: 'gitmek için',
+        navigateUpKeyAriaLabel: 'Yukarı ok', navigateDownKeyAriaLabel: 'Aşağı ok', closeText: 'kapatmak için', closeKeyAriaLabel: 'Escape tuşu' } } },
+    outline: 'Bu sayfada', prev: 'Önceki', next: 'Sonraki', dark: 'Görünüm', menu: 'Menü', top: 'Başa dön',
+    edit: "GitHub'da düzenle", upd: 'Güncellendi',
+    foot: { message: 'PHP ile yapıldı. MIT lisansı.', copyright: '© 2026 YL Katkıda Bulunanlar' },
+  },
+  vi: {
+    s: { button: { buttonText: 'Tìm kiếm', buttonAriaLabel: 'Tìm kiếm tài liệu' }, modal: {
+      displayDetails: 'Hiển thị danh sách chi tiết', resetButtonTitle: 'Đặt lại tìm kiếm', backButtonTitle: 'Đóng tìm kiếm',
+      noResultsText: 'Không có kết quả cho',
+      footer: { selectText: 'để chọn', selectKeyAriaLabel: 'phím Enter', navigateText: 'để di chuyển',
+        navigateUpKeyAriaLabel: 'Mũi tên lên', navigateDownKeyAriaLabel: 'Mũi tên xuống', closeText: 'để đóng', closeKeyAriaLabel: 'phím Escape' } } },
+    outline: 'Trên trang này', prev: 'Trước', next: 'Tiếp', dark: 'Giao diện', menu: 'Menu', top: 'Lên đầu trang',
+    edit: 'Sửa trang này trên GitHub', upd: 'Cập nhật',
+    foot: { message: 'Được viết bằng PHP. Giấy phép MIT.', copyright: '© 2026 Cộng tác viên YL' },
+  },
+  ar: {
+    s: { button: { buttonText: 'بحث', buttonAriaLabel: 'ابحث في التوثيق' }, modal: {
+      displayDetails: 'عرض القائمة التفصيلية', resetButtonTitle: 'إعادة ضبط البحث', backButtonTitle: 'إغلاق البحث',
+      noResultsText: 'لا توجد نتائج لـ',
+      footer: { selectText: 'للاختيار', selectKeyAriaLabel: 'مفتاح الإدخال', navigateText: 'للتنقل',
+        navigateUpKeyAriaLabel: 'السهم لأعلى', navigateDownKeyAriaLabel: 'السهم لأسفل', closeText: 'للإغلاق', closeKeyAriaLabel: 'مفتاح الهروب' } } },
+    outline: 'في هذه الصفحة', prev: 'السابق', next: 'التالي', dark: 'المظهر', menu: 'القائمة', top: 'العودة للأعلى',
+    edit: 'تعديل هذه الصفحة على GitHub', upd: 'آخر تحديث',
+    foot: { message: 'صُنع بـ PHP. رخصة MIT.', copyright: '© 2026 مساهمو YL' },
+  },
+  zhHans: {
+    s: { button: { buttonText: '搜索', buttonAriaLabel: '搜索文档' }, modal: {
+      displayDetails: '显示详情', resetButtonTitle: '清除查询条件', backButtonTitle: '返回',
+      noResultsText: '无搜索结果',
+      footer: { selectText: '选择', selectKeyAriaLabel: '回车键', navigateText: '切换',
+        navigateUpKeyAriaLabel: '上箭头', navigateDownKeyAriaLabel: '下箭头', closeText: '关闭', closeKeyAriaLabel: 'Esc 键' } } },
+    outline: '本页目录', prev: '上一页', next: '下一页', dark: '外观', menu: '菜单', top: '返回顶部',
+    edit: '在 GitHub 上编辑此页', upd: '更新于',
+    foot: { message: '基于 PHP 构建。MIT 许可证。', copyright: '© 2026 YL 贡献者' },
+  },
+  zhHant: {
+    s: { button: { buttonText: '搜尋 der', buttonAriaLabel: '搜一下文檔' }, modal: {
+      displayDetails: '展開詳細資料', resetButtonTitle: '清掉啦', backButtonTitle: '回去',
+      noResultsText: '找不到東西 QQ',
+      footer: { selectText: '選這個', selectKeyAriaLabel: 'Enter 啦', navigateText: '上下移動',
+        navigateUpKeyAriaLabel: '上箭頭', navigateDownKeyAriaLabel: '下箭頭', closeText: '掰掰', closeKeyAriaLabel: 'Esc 嘿' } } },
+    outline: '這頁有什麼', prev: '回上一頁', next: '下一頁 der', dark: '外觀', menu: '選單', top: '回到最上面',
+    edit: '直接在 GitHub 改這頁啦', upd: '更新時間',
+    foot: { message: '用 PHP 寫 der。MIT 授權，母湯亂用。', copyright: '© 2026 YL 貢獻者 der' },
   },
 }
 
+// Хелпер для построения themeConfig локали
+const mk = (T) => ({
+  nav: T.nav, sidebar: T.sidebar,
+  search: { provider: 'local', options: { translations: T.s.s } },
+  outline: { label: T.outline, level: [2, 3] },
+  docFooter: { prev: T.prev, next: T.next },
+  darkModeSwitchLabel: T.dark,
+  sidebarMenuLabel: T.menu,
+  returnToTopLabel: T.top,
+  editLink: { pattern: GH + '/edit/main/docs/:path', text: T.edit },
+  lastUpdated: { text: T.upd },
+  footer: T.foot,
+})
+
 export default defineConfig({
   title: 'YL',
-  description: 'Yankee Language - esoteric programming language on PHP with unicode syntax',
+  description: 'Yankee Language — esoteric programming language on PHP with unicode syntax',
   cleanUrls: true,
   sitemap: { hostname: SITE, lastmodDateOnly: true },
   head: [
@@ -92,31 +186,50 @@ export default defineConfig({
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-title', content: 'YL' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
     ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'application-name', content: 'YL' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#a78bfa' }],
     ['meta', { name: 'author', content: 'NormikChel' }],
-    ['meta', { name: 'keywords', content: 'YL, Yankee Language, esoteric programming language, PHP, unicode syntax' }],
     ['meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }],
+
+    // hreflang для всех 13 языков
     ['link', { rel: 'alternate', hreflang: 'ru', href: SITE + '/' }],
     ['link', { rel: 'alternate', hreflang: 'en', href: SITE + '/en/' }],
+    ['link', { rel: 'alternate', hreflang: 'de', href: SITE + '/de/' }],
+    ['link', { rel: 'alternate', hreflang: 'fr', href: SITE + '/fr/' }],
+    ['link', { rel: 'alternate', hreflang: 'ar', href: SITE + '/ar/' }],
+    ['link', { rel: 'alternate', hreflang: 'hi', href: SITE + '/hi/' }],
+    ['link', { rel: 'alternate', hreflang: 'id', href: SITE + '/id/' }],
+    ['link', { rel: 'alternate', hreflang: 'ja', href: SITE + '/ja/' }],
+    ['link', { rel: 'alternate', hreflang: 'ko', href: SITE + '/ko/' }],
+    ['link', { rel: 'alternate', hreflang: 'tr', href: SITE + '/tr/' }],
+    ['link', { rel: 'alternate', hreflang: 'vi', href: SITE + '/vi/' }],
     ['link', { rel: 'alternate', hreflang: 'zh-Hans', href: SITE + '/zh-Hans/' }],
     ['link', { rel: 'alternate', hreflang: 'zh-Hant', href: SITE + '/zh-Hant/' }],
     ['link', { rel: 'alternate', hreflang: 'x-default', href: SITE + '/' }],
+
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'YL RSS', href: SITE + '/rss.xml' }],
     ['link', { rel: 'alternate', type: 'application/atom+xml', title: 'YL Atom', href: SITE + '/atom.xml' }],
     ['link', { rel: 'sitemap', type: 'application/xml', href: SITE + '/sitemap.xml' }],
+
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'YL - Yankee Language' }],
     ['meta', { property: 'og:title', content: 'YL - Yankee Language' }],
-    ['meta', { property: 'og:description', content: 'Эзотерический язык программирования на PHP с уникальным юникод-синтаксисом.' }],
+    ['meta', { property: 'og:description', content: 'Esoteric programming language on PHP with unicode syntax' }],
     ['meta', { property: 'og:url', content: SITE + '/' }],
     ['meta', { property: 'og:image', content: OG_IMG }],
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }],
     ['meta', { property: 'og:locale', content: 'ru_RU' }],
     ['meta', { property: 'og:locale:alternate', content: 'en_US' }],
+    ['meta', { property: 'og:locale:alternate', content: 'de_DE' }],
+    ['meta', { property: 'og:locale:alternate', content: 'fr_FR' }],
+    ['meta', { property: 'og:locale:alternate', content: 'ar_SA' }],
+    ['meta', { property: 'og:locale:alternate', content: 'hi_IN' }],
+    ['meta', { property: 'og:locale:alternate', content: 'id_ID' }],
+    ['meta', { property: 'og:locale:alternate', content: 'ja_JP' }],
+    ['meta', { property: 'og:locale:alternate', content: 'ko_KR' }],
+    ['meta', { property: 'og:locale:alternate', content: 'tr_TR' }],
+    ['meta', { property: 'og:locale:alternate', content: 'vi_VN' }],
     ['meta', { property: 'og:locale:alternate', content: 'zh_CN' }],
     ['meta', { property: 'og:locale:alternate', content: 'zh_TW' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
@@ -128,7 +241,7 @@ export default defineConfig({
       '@context': 'https://schema.org',
       '@graph': [
         { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE + '/', name: 'YL - Yankee Language',
-          description: 'Esoteric programming language on PHP', inLanguage: ['ru', 'en', 'zh-Hans', 'zh-Hant'],
+          description: 'Esoteric programming language on PHP', inLanguage: ['ru','en','de','fr','ar','hi','id','ja','ko','tr','vi','zh-Hans','zh-Hant'],
           publisher: { '@id': SITE + '/#person' },
           potentialAction: { '@type': 'SearchAction',
             target: { '@type': 'EntryPoint', urlTemplate: SITE + '/?q={search_term_string}' },
@@ -144,125 +257,207 @@ export default defineConfig({
   ],
   markdown: { languages: [ylGrammar] },
 
-  // === SEARCH В ROOT — чтобы не пропадал ===
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: 'YL',
     socialLinks: [{ icon: 'github', link: GH }],
-    search: {
-      provider: 'local',
-      options: { translations: searchRu },
-    },
-    outline: { label: 'На этой странице', level: [2, 3] },
-    docFooter: { prev: 'Назад', next: 'Вперёд' },
-    darkModeSwitchLabel: 'Тема',
-    sidebarMenuLabel: 'Меню',
-    returnToTopLabel: 'Наверх',
-    footer: { message: 'Сделано на PHP. Лицензия MIT.', copyright: '© 2026 YL Contributors' },
+    search: { provider: 'local', options: { translations: T.ru.s } },
+    footer: T.ru.foot,
   },
 
+  // root = ru (VitePress всегда первым), остальные — по алфавиту (код)
   locales: {
-    root: {
-      label: 'Русский', lang: 'ru',
-      themeConfig: {
-        nav: [
-          { text: 'Руководство', link: '/guide/getting-started', activeMatch: '/guide/' },
+    root: { label: 'Русский', lang: 'ru', themeConfig: mk({
+      ...T.ru,
+      nav: [
+        { text: 'Руководство', link: '/guide/getting-started', activeMatch: '/guide/' },
+        { text: 'Синтаксис', link: '/guide/syntax' },
+        { text: 'Stdlib', link: '/guide/stdlib' },
+        { text: 'Примеры', link: '/examples/' },
+        { text: 'Playground', link: GH + '/tree/main/playground' },
+      ],
+      sidebar: {
+        '/guide/': [{ text: 'Руководство', items: [
+          { text: 'Быстрый старт', link: '/guide/getting-started' },
           { text: 'Синтаксис', link: '/guide/syntax' },
-          { text: 'Stdlib', link: '/guide/stdlib' },
-          { text: 'Примеры', link: '/examples/' },
-          { text: 'Playground', link: GH + '/tree/main/playground' },
-        ],
-        sidebar: {
-          '/guide/': [{ text: 'Руководство', items: [
-            { text: 'Быстрый старт', link: '/guide/getting-started' },
-            { text: 'Синтаксис', link: '/guide/syntax' },
-            { text: 'Стандартная библиотека', link: '/guide/stdlib' },
-          ]}],
-          '/examples/': [{ text: 'Примеры', items: [
-            { text: 'Всё сразу', link: '/examples/' },
-            { text: 'ООП', link: '/examples/oop' },
-            { text: 'Генераторы', link: '/examples/generators' },
-            { text: 'Async', link: '/examples/async' },
-          ]}],
-        },
-        search: { provider: 'local', options: { translations: searchRu } },
-        editLink: { pattern: GH + '/edit/main/docs/:path', text: 'Редактировать на GitHub' },
-        lastUpdated: { text: 'Обновлено' },
+          { text: 'Стандартная библиотека', link: '/guide/stdlib' },
+        ]}],
+        '/examples/': [{ text: 'Примеры', items: [
+          { text: 'Всё сразу', link: '/examples/' },
+          { text: 'ООП', link: '/examples/oop' },
+          { text: 'Генераторы', link: '/examples/generators' },
+          { text: 'Async', link: '/examples/async' },
+        ]}],
       },
-    },
-    en: {
-      label: 'English', lang: 'en', link: '/en/',
-      themeConfig: {
-        nav: [
-          { text: 'Guide', link: '/en/guide/getting-started', activeMatch: '/en/guide/' },
-          { text: 'Syntax', link: '/en/guide/syntax' },
-          { text: 'Stdlib', link: '/en/guide/stdlib' },
-          { text: 'Examples', link: '/en/examples/' },
-          { text: 'Playground', link: GH },
-        ],
-        sidebar: { '/en/guide/': [{ text: 'Guide', items: [
-          { text: 'Getting started', link: '/en/guide/getting-started' },
-          { text: 'Syntax', link: '/en/guide/syntax' },
-          { text: 'Standard library', link: '/en/guide/stdlib' },
-        ]}] },
-        search: { provider: 'local', options: { translations: searchEn } },
-        outline: { label: 'On this page', level: [2, 3] },
-        docFooter: { prev: 'Previous', next: 'Next' },
-        darkModeSwitchLabel: 'Appearance',
-        sidebarMenuLabel: 'Menu',
-        returnToTopLabel: 'Return to top',
-        editLink: { pattern: GH + '/edit/main/docs/:path', text: 'Edit this page on GitHub' },
-        lastUpdated: { text: 'Updated' },
-        footer: { message: 'Built on PHP. MIT License.', copyright: '© 2026 YL Contributors' },
-      },
-    },
-    'zh-Hans': {
-      label: '简体中文', lang: 'zh-Hans', link: '/zh-Hans/',
-      themeConfig: {
-        nav: [
-          { text: '指南', link: '/zh-Hans/guide/getting-started' },
-          { text: '语法', link: '/zh-Hans/guide/syntax' },
-          { text: '标准库', link: '/zh-Hans/guide/stdlib' },
-        ],
-        sidebar: { '/zh-Hans/guide/': [{ text: '指南', items: [
-          { text: '快速开始', link: '/zh-Hans/guide/getting-started' },
-          { text: '语法', link: '/zh-Hans/guide/syntax' },
-          { text: '标准库', link: '/zh-Hans/guide/stdlib' },
-        ]}] },
-        search: { provider: 'local', options: { translations: searchZhHans } },
-        outline: { label: '本页目录', level: [2, 3] },
-        docFooter: { prev: '上一页', next: '下一页' },
-        darkModeSwitchLabel: '外观',
-        sidebarMenuLabel: '菜单',
-        returnToTopLabel: '返回顶部',
-        editLink: { pattern: GH + '/edit/main/docs/:path', text: '在 GitHub 上编辑此页' },
-        lastUpdated: { text: '更新于' },
-        footer: { message: '基于 PHP 构建。MIT 许可证。', copyright: '© 2026 YL 贡献者' },
-      },
-    },
-    'zh-Hant': {
-      label: '繁體中文（臺式）', lang: 'zh-Hant', link: '/zh-Hant/',
-      themeConfig: {
-        nav: [
-          { text: '指南 der', link: '/zh-Hant/guide/getting-started' },
-          { text: '語法', link: '/zh-Hant/guide/syntax' },
-          { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
-        ],
-        sidebar: { '/zh-Hant/guide/': [{ text: '指南', items: [
-          { text: '立馬開始', link: '/zh-Hant/guide/getting-started' },
-          { text: '語法 der', link: '/zh-Hant/guide/syntax' },
-          { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
-        ]}] },
-        search: { provider: 'local', options: { translations: searchZhHant } },
-        outline: { label: '這頁有什麼', level: [2, 3] },
-        docFooter: { prev: '回上一頁', next: '下一頁 der' },
-        darkModeSwitchLabel: '外觀',
-        sidebarMenuLabel: '選單',
-        returnToTopLabel: '回到最上面',
-        editLink: { pattern: GH + '/edit/main/docs/:path', text: '直接在 GitHub 改這頁啦' },
-        lastUpdated: { text: '更新時間' },
-        footer: { message: '用 PHP 寫 der。MIT 授權，母湯亂用。', copyright: '© 2026 YL 貢獻者 der' },
-      },
-    },
+    })},
+
+    // === АЛФАВИТНЫЙ ПОРЯДОК ===
+    ar: { label: 'العربية', lang: 'ar', dir: 'rtl', link: '/ar/', themeConfig: mk({
+      ...T.ar,
+      nav: [
+        { text: 'الدليل', link: '/ar/guide/getting-started' },
+        { text: 'الصياغة', link: '/ar/guide/syntax' },
+        { text: 'المكتبة', link: '/ar/guide/stdlib' },
+      ],
+      sidebar: { '/ar/guide/': [{ text: 'الدليل', items: [
+        { text: 'البدء السريع', link: '/ar/guide/getting-started' },
+        { text: 'الصياغة', link: '/ar/guide/syntax' },
+        { text: 'المكتبة القياسية', link: '/ar/guide/stdlib' },
+      ]}] },
+    })},
+
+    de: { label: 'Deutsch', lang: 'de', link: '/de/', themeConfig: mk({
+      ...T.de,
+      nav: [
+        { text: 'Anleitung', link: '/de/guide/getting-started' },
+        { text: 'Syntax', link: '/de/guide/syntax' },
+        { text: 'Stdlib', link: '/de/guide/stdlib' },
+      ],
+      sidebar: { '/de/guide/': [{ text: 'Anleitung', items: [
+        { text: 'Erste Schritte', link: '/de/guide/getting-started' },
+        { text: 'Syntax', link: '/de/guide/syntax' },
+        { text: 'Standardbibliothek', link: '/de/guide/stdlib' },
+      ]}] },
+    })},
+
+    en: { label: 'English', lang: 'en', link: '/en/', themeConfig: mk({
+      ...T.en,
+      nav: [
+        { text: 'Guide', link: '/en/guide/getting-started' },
+        { text: 'Syntax', link: '/en/guide/syntax' },
+        { text: 'Stdlib', link: '/en/guide/stdlib' },
+      ],
+      sidebar: { '/en/guide/': [{ text: 'Guide', items: [
+        { text: 'Getting started', link: '/en/guide/getting-started' },
+        { text: 'Syntax', link: '/en/guide/syntax' },
+        { text: 'Standard library', link: '/en/guide/stdlib' },
+      ]}] },
+    })},
+
+    fr: { label: 'Français', lang: 'fr', link: '/fr/', themeConfig: mk({
+      ...T.fr,
+      nav: [
+        { text: 'Guide', link: '/fr/guide/getting-started' },
+        { text: 'Syntaxe', link: '/fr/guide/syntax' },
+        { text: 'Stdlib', link: '/fr/guide/stdlib' },
+      ],
+      sidebar: { '/fr/guide/': [{ text: 'Guide', items: [
+        { text: 'Démarrage rapide', link: '/fr/guide/getting-started' },
+        { text: 'Syntaxe', link: '/fr/guide/syntax' },
+        { text: 'Bibliothèque standard', link: '/fr/guide/stdlib' },
+      ]}] },
+    })},
+
+    hi: { label: 'हिन्दी', lang: 'hi', link: '/hi/', themeConfig: mk({
+      ...T.hi,
+      nav: [
+        { text: 'गाइड', link: '/hi/guide/getting-started' },
+        { text: 'सिंटैक्स', link: '/hi/guide/syntax' },
+        { text: 'मानक लाइब्रेरी', link: '/hi/guide/stdlib' },
+      ],
+      sidebar: { '/hi/guide/': [{ text: 'गाइड', items: [
+        { text: 'शुरुआत', link: '/hi/guide/getting-started' },
+        { text: 'सिंटैक्स', link: '/hi/guide/syntax' },
+        { text: 'मानक लाइब्रेरी', link: '/hi/guide/stdlib' },
+      ]}] },
+    })},
+
+    id: { label: 'Bahasa Indonesia', lang: 'id', link: '/id/', themeConfig: mk({
+      ...T.id,
+      nav: [
+        { text: 'Panduan', link: '/id/guide/getting-started' },
+        { text: 'Sintaks', link: '/id/guide/syntax' },
+        { text: 'Stdlib', link: '/id/guide/stdlib' },
+      ],
+      sidebar: { '/id/guide/': [{ text: 'Panduan', items: [
+        { text: 'Mulai cepat', link: '/id/guide/getting-started' },
+        { text: 'Sintaks', link: '/id/guide/syntax' },
+        { text: 'Pustaka standar', link: '/id/guide/stdlib' },
+      ]}] },
+    })},
+
+    ja: { label: '日本語', lang: 'ja', link: '/ja/', themeConfig: mk({
+      ...T.ja,
+      nav: [
+        { text: 'ガイド', link: '/ja/guide/getting-started' },
+        { text: '構文', link: '/ja/guide/syntax' },
+        { text: '標準ライブラリ', link: '/ja/guide/stdlib' },
+      ],
+      sidebar: { '/ja/guide/': [{ text: 'ガイド', items: [
+        { text: 'はじめに', link: '/ja/guide/getting-started' },
+        { text: '構文', link: '/ja/guide/syntax' },
+        { text: '標準ライブラリ', link: '/ja/guide/stdlib' },
+      ]}] },
+    })},
+
+    ko: { label: '한국어', lang: 'ko', link: '/ko/', themeConfig: mk({
+      ...T.ko,
+      nav: [
+        { text: '가이드', link: '/ko/guide/getting-started' },
+        { text: '구문', link: '/ko/guide/syntax' },
+        { text: '표준 라이브러리', link: '/ko/guide/stdlib' },
+      ],
+      sidebar: { '/ko/guide/': [{ text: '가이드', items: [
+        { text: '시작하기', link: '/ko/guide/getting-started' },
+        { text: '구문', link: '/ko/guide/syntax' },
+        { text: '표준 라이브러리', link: '/ko/guide/stdlib' },
+      ]}] },
+    })},
+
+    tr: { label: 'Türkçe', lang: 'tr', link: '/tr/', themeConfig: mk({
+      ...T.tr,
+      nav: [
+        { text: 'Kılavuz', link: '/tr/guide/getting-started' },
+        { text: 'Sözdizimi', link: '/tr/guide/syntax' },
+        { text: 'Stdlib', link: '/tr/guide/stdlib' },
+      ],
+      sidebar: { '/tr/guide/': [{ text: 'Kılavuz', items: [
+        { text: 'Hızlı başlangıç', link: '/tr/guide/getting-started' },
+        { text: 'Sözdizimi', link: '/tr/guide/syntax' },
+        { text: 'Standart kütüphane', link: '/tr/guide/stdlib' },
+      ]}] },
+    })},
+
+    vi: { label: 'Tiếng Việt', lang: 'vi', link: '/vi/', themeConfig: mk({
+      ...T.vi,
+      nav: [
+        { text: 'Hướng dẫn', link: '/vi/guide/getting-started' },
+        { text: 'Cú pháp', link: '/vi/guide/syntax' },
+        { text: 'Stdlib', link: '/vi/guide/stdlib' },
+      ],
+      sidebar: { '/vi/guide/': [{ text: 'Hướng dẫn', items: [
+        { text: 'Bắt đầu', link: '/vi/guide/getting-started' },
+        { text: 'Cú pháp', link: '/vi/guide/syntax' },
+        { text: 'Thư viện chuẩn', link: '/vi/guide/stdlib' },
+      ]}] },
+    })},
+
+    'zh-Hans': { label: '简体中文', lang: 'zh-Hans', link: '/zh-Hans/', themeConfig: mk({
+      ...T.zhHans,
+      nav: [
+        { text: '指南', link: '/zh-Hans/guide/getting-started' },
+        { text: '语法', link: '/zh-Hans/guide/syntax' },
+        { text: '标准库', link: '/zh-Hans/guide/stdlib' },
+      ],
+      sidebar: { '/zh-Hans/guide/': [{ text: '指南', items: [
+        { text: '快速开始', link: '/zh-Hans/guide/getting-started' },
+        { text: '语法', link: '/zh-Hans/guide/syntax' },
+        { text: '标准库', link: '/zh-Hans/guide/stdlib' },
+      ]}] },
+    })},
+
+    'zh-Hant': { label: '繁體中文（臺式）', lang: 'zh-Hant', link: '/zh-Hant/', themeConfig: mk({
+      ...T.zhHant,
+      nav: [
+        { text: '指南 der', link: '/zh-Hant/guide/getting-started' },
+        { text: '語法', link: '/zh-Hant/guide/syntax' },
+        { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
+      ],
+      sidebar: { '/zh-Hant/guide/': [{ text: '指南', items: [
+        { text: '立馬開始', link: '/zh-Hant/guide/getting-started' },
+        { text: '語法 der', link: '/zh-Hant/guide/syntax' },
+        { text: '標準庫', link: '/zh-Hant/guide/stdlib' },
+      ]}] },
+    })},
   },
 })
