@@ -1,6 +1,16 @@
 import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'
 import './custom.css'
 import './custom-scrollbar.css'
 import './register-sw'
+import BviButton from './BviButton.vue'
 
-export default DefaultTheme
+export default {
+  extends: DefaultTheme,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      // Слот VitePress: содержимое справа от навбара (перед тумблером темы)
+      'nav-bar-content-after': () => h(BviButton),
+    })
+  },
+}

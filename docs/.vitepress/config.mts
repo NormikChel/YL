@@ -132,7 +132,6 @@ export default defineConfig({
     // BVI — версия для слабовидящих
     ['link', { rel: 'stylesheet', href: '/js/bvi/css/bvi.min.css' }],
     ['script', { src: '/js/bvi/js/bvi.min.js' }],
-    ['script', { src: '/js/bvi/bvi-init.js' }],
     ['script', { src: '/js/lenis-init.js' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
